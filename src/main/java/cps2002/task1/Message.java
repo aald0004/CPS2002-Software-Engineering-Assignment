@@ -6,4 +6,9 @@ public class Message {
 
         return "Message";
     }
+
+    public String newMessage(){
+
+        return "Message 2";
+    }
 }

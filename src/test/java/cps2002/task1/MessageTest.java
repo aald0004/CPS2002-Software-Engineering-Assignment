@@ -28,6 +28,13 @@ public class MessageTest {
 
     }
 
+    @Test
+    public void testNewMessage(){
+
+        String n_message = m.newMessage();
+        assertEquals("Message 2", n_message);
+    }
+
 
     @After
     public void teardown(){
