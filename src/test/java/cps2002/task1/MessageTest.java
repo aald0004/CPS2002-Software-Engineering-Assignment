@@ -35,6 +35,12 @@ public class MessageTest {
         assertEquals("Hello World", hw);
     }
 
+    @Test
+    public void testBlankMessage(){
+        String bm = m.blankMessage();
+        assertEquals("",bm);
+    }
+
 
     @After
     public void teardown(){
