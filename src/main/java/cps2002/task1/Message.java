@@ -11,4 +11,9 @@ public class Message {
 
         return "Hello World";
     }
+
+    public String blankMessage(){
+
+        return "";
+    }
 }
