@@ -29,10 +29,10 @@ public class MessageTest {
     }
 
     @Test
-    public void testNewMessage(){
+    public void testHelloWorld(){
 
-        String n_message = m.newMessage();
-        assertEquals("Message 2", n_message);
+        String hw = m.helloWorld();
+        assertEquals("Hello World", hw);
     }
 
 

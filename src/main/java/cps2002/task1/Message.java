@@ -7,8 +7,8 @@ public class Message {
         return "Message";
     }
 
-    public String newMessage(){
+    public String helloWorld(){
 
-        return "Message 2";
+        return "Hello World";
     }
 }
