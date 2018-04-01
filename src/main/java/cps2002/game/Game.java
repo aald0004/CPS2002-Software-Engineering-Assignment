@@ -1,0 +1,164 @@
+package cps2002.game;
+
+import javax.swing.JOptionPane;
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.GridLayout;
+import java.awt.Window;
+import java.util.ArrayList;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+
+
+public class Game {
+
+    public static final int MAX_PLAYERS = 8;
+    public static final int MIN_PLAYERS = 2;
+
+    int numOfPlayers = 0;
+
+    ArrayList<JFrame> playerFrames = new ArrayList<JFrame>();
+
+    int boardSize = 0;
+
+
+    public void startGame(){
+
+        setPlayers("");
+
+        tileMap tm = new tileMap(numOfPlayers);
+        tm.setSize("");
+        tm.map = tm.setMap();
+
+        tm.getTileType(0,0);
+
+
+        boardSize = tm.size;
+
+
+        setFrames();
+
+
+    }
+
+    public void setFrames(){
+        for(int i = 0; i < numOfPlayers; i++){
+            int playerNum = i+1;
+            JFrame playerFrame = new JFrame("Player "+ playerNum);
+
+            Container container = playerFrame.getContentPane();
+            ArrayList < JPanel > components = new ArrayList < JPanel >();
+
+            JPanel[][] panel = new JPanel[boardSize][boardSize];
+
+            setPanel(playerFrame, boardSize, panel, container);
+
+            playerFrames.add(playerFrame);
+        }
+    }
+
+    public boolean setPlayers(String num){
+        String numPlayers = "";
+        if(num.equals("-1")){
+            numPlayers = num;
+        } else {
+            numPlayers = (String) JOptionPane.showInputDialog(null, "Choose number of players",
+                    "Number of Players", JOptionPane.QUESTION_MESSAGE);
+        }
+
+        numOfPlayers = Integer.parseInt(numPlayers);
+
+        boolean validNumber = false;
+
+        validNumber = setNumPlayers(numOfPlayers);
+
+
+
+        if(validNumber == true) {
+            return validNumber;
+        } else {
+
+            JOptionPane.showMessageDialog(new JFrame(), "Invalid number of players", "Dialog",
+                    JOptionPane.ERROR_MESSAGE);
+            return setPlayers("1");
+        }
+
+    }
+
+    // set up the panels
+    public void setPanels(JPanel[][] panel, Container container, int size){
+        JPanel temp = null;
+
+        int counter = 0;
+        for (int i = 0; i < panel.length; i++) {
+            for (int j = 0; j < panel[i].length; j++) {
+
+                temp = new JPanel(new BorderLayout());
+                temp.setSize(400/size, 400/size);
+                panel[i][j] = temp;
+                container.add(temp);
+
+            }
+
+
+        }
+    }
+
+    // set up initial colours
+    public void setInitialColours(JPanel[][] panel, int size) {
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+
+                panel[i][j].setBackground(Color.GRAY);
+            }
+        }
+
+    }
+
+    // set up the JFrame
+    public void setPanel(JFrame frame, int size, JPanel panel[][], Container container){
+
+
+        frame.setLayout( new GridLayout(size,size) );
+
+
+        frame.setPreferredSize(new Dimension(400,400));
+
+        setPanels(panel, container, size);
+
+
+        setInitialColours(panel, size);
+
+
+
+        frame.pack();
+        frame.setVisible(true);
+
+
+    }
+
+
+    // set the num of players
+    public boolean setNumPlayers(int n){
+        if (n >= MIN_PLAYERS && n <= MAX_PLAYERS){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+
+    public static void main(String args[]){
+        Game game = new Game();
+        game.startGame();
+    }
+
+}
