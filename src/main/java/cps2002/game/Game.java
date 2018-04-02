@@ -4,16 +4,9 @@ import javax.swing.JOptionPane;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.GridLayout;
-import java.awt.Window;
 import java.util.ArrayList;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import javax.imageio.ImageIO;
 import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 
@@ -28,22 +21,58 @@ public class Game {
 
     int boardSize = 0;
 
-
+    // main game loop
     public void startGame(){
 
-        setPlayers("");
 
-        tileMap tm = new tileMap(numOfPlayers);
-        tm.setSize("");
-        tm.map = tm.setMap();
+            String numPlayers = (String) JOptionPane.showInputDialog(null, "Choose number of players",
+                    "Number of Players", JOptionPane.QUESTION_MESSAGE);
 
-        tm.getTileType(0,0);
+            numOfPlayers = Integer.parseInt(numPlayers);
 
 
-        boardSize = tm.size;
+            while (setPlayers(numOfPlayers) == false) {
+
+                JOptionPane.showMessageDialog(null, "Number of Players must be between 2 and 8.",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+
+                numPlayers = (String) JOptionPane.showInputDialog(null, "Choose number of players",
+                        "Number of Players", JOptionPane.QUESTION_MESSAGE);
+
+                numOfPlayers = Integer.parseInt(numPlayers);
+            }
+
+            tileMap tm = new tileMap(numOfPlayers);
+
+            String mpSize = (String) JOptionPane.showInputDialog(null, "Choose map size",
+                    "Map Size", JOptionPane.QUESTION_MESSAGE);
+
+            int mapSize = Integer.parseInt(mpSize);
 
 
-        setFrames();
+            while (tm.setSize(mapSize) == false) {
+
+                JOptionPane.showMessageDialog(null, "Invalid map size",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+
+                mpSize = (String) JOptionPane.showInputDialog(null, "Choose map size",
+                        "Map Size", JOptionPane.QUESTION_MESSAGE);
+
+                mapSize = Integer.parseInt(mpSize);
+
+            }
+
+            tm.size = mapSize;
+            tm.map = tm.setMap();
+
+            tm.getTileType(0, 0);
+
+
+            boardSize = tm.size;
+
+
+            setFrames();
+
 
 
     }
@@ -64,31 +93,16 @@ public class Game {
         }
     }
 
-    public boolean setPlayers(String num){
-        String numPlayers = "";
-        if(num.equals("-1")){
-            numPlayers = num;
-        } else {
-            numPlayers = (String) JOptionPane.showInputDialog(null, "Choose number of players",
-                    "Number of Players", JOptionPane.QUESTION_MESSAGE);
-        }
+    public boolean setPlayers(int num){
 
-        numOfPlayers = Integer.parseInt(numPlayers);
 
         boolean validNumber = false;
 
-        validNumber = setNumPlayers(numOfPlayers);
+        validNumber = setNumPlayers(num);
 
 
 
-        if(validNumber == true) {
-            return validNumber;
-        } else {
-
-            JOptionPane.showMessageDialog(new JFrame(), "Invalid number of players", "Dialog",
-                    JOptionPane.ERROR_MESSAGE);
-            return setPlayers("1");
-        }
+        return validNumber;
 
     }
 

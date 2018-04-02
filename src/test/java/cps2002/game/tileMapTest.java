@@ -73,12 +73,12 @@ public class tileMapTest {
 
     @Test
     public void testSetSize(){
-        assertEquals(true, tm.setSize("-1"));
+        assertEquals(true, tm.setSize(6));
     }
 
     @Test
-    public void testSetSizeNonRecursion(){
-        assertEquals(true, tm.setSize("1"));
+    public void testSetSizeFail(){
+        assertEquals(false, tm.setSize(4));
     }
 
     @Test

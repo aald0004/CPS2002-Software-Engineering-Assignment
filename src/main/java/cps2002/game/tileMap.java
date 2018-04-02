@@ -24,30 +24,15 @@ public class tileMap {
 
     }
 
-    public boolean setSize(String input){
+    public boolean setSize(int s){
 
-        this.numOfPlayers = numOfPlayers;
-        String mpSize = "";
-        if(input.equals("-1")){
-            mpSize = input;
-        } else {
-            mpSize = (String) JOptionPane.showInputDialog(null, "Choose map size",
-                    "Map Size", JOptionPane.QUESTION_MESSAGE);
-        }
-
-        int mapSize = Integer.parseInt(mpSize);
 
         boolean validNumber = false;
 
-        validNumber = setMapSize(mapSize);
+        validNumber = setMapSize(s);
 
 
-        if(validNumber == true) {
-            size = mapSize;
-            return validNumber;
-        } else {
-            return setSize("1");
-        }
+        return validNumber;
     }
 
     public boolean setMapSize(int s){
@@ -57,6 +42,7 @@ public class tileMap {
         if(numOfPlayers<=4){
 
             if(s >= MIN_SIZE_1 && s<=MAX_SIZE){
+                size = s;
                 valid =  true;
             } else {
                 valid = false;
