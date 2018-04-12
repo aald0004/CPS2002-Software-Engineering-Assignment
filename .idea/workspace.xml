@@ -11,15 +11,16 @@
       <change beforePath="$PROJECT_DIR$/emma/_files/5.html" afterPath="" />
       <change beforePath="$PROJECT_DIR$/emma/coverage.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/emma/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/assignment-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/target/assignment-1.0-SNAPSHOT.jar" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-cps2002.game.GameTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-cps2002.game.GameTest.xml" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-cps2002.game.tileMapTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-cps2002.game.tileMapTest.xml" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-cps2002.task1.CalculatorTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-cps2002.task1.CalculatorTest.xml" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cps2002.game.GameTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/cps2002.game.GameTest.txt" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cps2002.game.tileMapTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/cps2002.game.tileMapTest.txt" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cps2002.task1.CalculatorTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/cps2002.task1.CalculatorTest.txt" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cps2002.task1.MessageTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/cps2002.task1.MessageTest.txt" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cps2002/game/Game.java" afterPath="$PROJECT_DIR$/src/main/java/cps2002/game/Game.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cps2002/game/tileMap.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cps2002/game/GameTest.java" afterPath="$PROJECT_DIR$/src/test/java/cps2002/game/GameTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cps2002/game/tileMapTest.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cps2002/game/Game.class" afterPath="$PROJECT_DIR$/target/classes/cps2002/game/Game.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cps2002/game/tileMap.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-cps2002.game.tileMapTest.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cps2002.game.tileMapTest.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/cps2002/game/GameTest.class" afterPath="$PROJECT_DIR$/target/test-classes/cps2002/game/GameTest.class" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/cps2002/game/tileMapTest.class" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -34,17 +35,26 @@
     <SUITE FILE_PATH="coverage/CPS2002assignment$MessageTest.coverage" NAME="MessageTest Coverage Results" MODIFIED="1521286482257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>cps2002.task.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/CPS2002assignment$tileMapTest.coverage" NAME="tileMapTest Coverage Results" MODIFIED="1522659103622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/CPS2002assignment$tileMapTest.coverage" NAME="tileMapTest Coverage Results" MODIFIED="1523022256075" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>cps2002.game.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/CPS2002assignment$PositionTest.coverage" NAME="PositionTest Coverage Results" MODIFIED="1523488232036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>cps2002.game.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/CPS2002assignment$MessageTest__1_.coverage" NAME="MessageTest (1) Coverage Results" MODIFIED="1521315539331" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>cps2002.task1.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/CPS2002assignment$GameTest.coverage" NAME="GameTest Coverage Results" MODIFIED="1522661642077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/CPS2002assignment$GameTest.coverage" NAME="GameTest Coverage Results" MODIFIED="1523544182747" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>cps2002.game.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/CPS2002assignment$CalculatorTest.coverage" NAME="CalculatorTest Coverage Results" MODIFIED="1521315721091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>cps2002.task1.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/CPS2002assignment$MapTest.coverage" NAME="MapTest Coverage Results" MODIFIED="1523514664045" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>cps2002.game.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/CPS2002assignment$PlayerTest.coverage" NAME="PlayerTest Coverage Results" MODIFIED="1523487659888" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>cps2002.game.*</FILTER>
     </SUITE>
   </component>
   <component name="FileEditorManager">
@@ -52,50 +62,10 @@
       <file leaf-file-name="GameTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/cps2002/game/GameTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="83" column="5" lean-forward="false" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
+            <state relative-caret-position="639">
+              <caret line="394" column="22" lean-forward="false" selection-start-line="394" selection-start-column="22" selection-end-line="394" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#255#256#0" expanded="true" />
-                <element signature="e#285#286#0" expanded="true" />
-                <element signature="e#1527#1528#0" expanded="true" />
-                <element signature="e#1551#1552#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="coverage.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/emma/coverage.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1781">
-              <caret line="21" column="31" lean-forward="true" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tileMap.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cps2002/game/tileMap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="44" column="25" lean-forward="false" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tileMapTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/cps2002/game/tileMapTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="79" column="31" lean-forward="false" selection-start-line="79" selection-start-column="31" selection-end-line="79" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1485#1486#0" expanded="true" />
-                <element signature="e#1534#1535#0" expanded="true" />
-                <element signature="e#1580#1581#0" expanded="true" />
-                <element signature="e#1630#1631#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -104,11 +74,91 @@
       <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cps2002/game/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="108" column="24" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+            <state relative-caret-position="3240">
+              <caret line="180" column="62" lean-forward="false" selection-start-line="180" selection-start-column="62" selection-end-line="180" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1028#1036#0" expanded="true" />
+                <element signature="e#1237#1245#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="coverage.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/emma/coverage.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Map.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cps2002/game/Map.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="193">
+              <caret line="97" column="8" lean-forward="false" selection-start-line="97" selection-start-column="8" selection-end-line="97" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MapTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/cps2002/game/MapTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2977#2978#0" expanded="true" />
+                <element signature="e#3026#3027#0" expanded="true" />
+                <element signature="e#3142#3143#0" expanded="true" />
+                <element signature="e#3192#3193#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayerTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/cps2002/game/PlayerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="129">
+              <caret line="8" column="46" lean-forward="false" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#362#363#0" expanded="true" />
+                <element signature="e#403#404#0" expanded="true" />
+                <element signature="e#751#752#0" expanded="true" />
+                <element signature="e#780#781#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PositionTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/cps2002/game/PositionTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="129">
+              <caret line="8" column="56" lean-forward="false" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#361#362#0" expanded="true" />
+                <element signature="e#400#401#0" expanded="true" />
+                <element signature="e#755#756#0" expanded="true" />
+                <element signature="e#781#782#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cps2002/game/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="28" column="25" lean-forward="false" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -121,6 +171,20 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>htmlString</find>
+      <find>startingPos</find>
+      <find>startingPosition</find>
+      <find>'w'</find>
+      <find>revealColour</find>
+      <find>setPlayers</find>
+      <find>tileMap</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>Map</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -144,8 +208,15 @@
         <option value="$PROJECT_DIR$/src/main/java/cps2002/game/numOfPlayersError.java" />
         <option value="$PROJECT_DIR$/src/main/java/cps2002/game/tileMap.java" />
         <option value="$PROJECT_DIR$/src/test/java/cps2002/game/tileMapTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cps2002/game/Game.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cps2002/game/Player.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cps2002/game/Position.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cps2002/game/Map.java" />
+        <option value="$PROJECT_DIR$/src/test/java/cps2002/game/MapTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/cps2002/game/PlayerTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/cps2002/game/PositionTest.java" />
+        <option value="$PROJECT_DIR$/map_player 1.html" />
         <option value="$PROJECT_DIR$/src/test/java/cps2002/game/GameTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cps2002/game/Game.java" />
       </list>
     </option>
   </component>
@@ -184,6 +255,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -284,9 +356,8 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -319,25 +390,6 @@
       <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
-    </configuration>
-    <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="cps2002.game.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="cps2002.game.Game" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="CPS2002assignment" />
-      <envs />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -378,7 +430,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="GameTest.testStartGamePlayerFrames" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GameTest.testDownWithOutOfBounds" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="cps2002.game.*" />
@@ -390,7 +442,82 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="cps2002.game" />
       <option name="MAIN_CLASS_NAME" value="cps2002.game.GameTest" />
-      <option name="METHOD_NAME" value="testStartGamePlayerFrames" />
+      <option name="METHOD_NAME" value="testDownWithOutOfBounds" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="GameTest.testLeftWithOutOfBounds" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="cps2002.game.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="CPS2002assignment" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="cps2002.game" />
+      <option name="MAIN_CLASS_NAME" value="cps2002.game.GameTest" />
+      <option name="METHOD_NAME" value="testLeftWithOutOfBounds" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="GameTest.testRightWithOutOfBounds" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="cps2002.game.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="CPS2002assignment" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="cps2002.game" />
+      <option name="MAIN_CLASS_NAME" value="cps2002.game.GameTest" />
+      <option name="METHOD_NAME" value="testRightWithOutOfBounds" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="GameTest.testUpWithOutOfBounds" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="cps2002.game.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="CPS2002assignment" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="cps2002.game" />
+      <option name="MAIN_CLASS_NAME" value="cps2002.game.GameTest" />
+      <option name="METHOD_NAME" value="testUpWithOutOfBounds" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -412,56 +539,6 @@
       <option name="MAIN_CLASS_NAME" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="tileMapTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="cps2002.game.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="CPS2002assignment" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="cps2002.game" />
-      <option name="MAIN_CLASS_NAME" value="cps2002.game.tileMapTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="tileMapTest.testSetMapSizeWithFalseConditionWhenPlayerIsLessThan5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="cps2002.game.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="CPS2002assignment" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="cps2002.game" />
-      <option name="MAIN_CLASS_NAME" value="cps2002.game.tileMapTest" />
-      <option name="METHOD_NAME" value="testSetMapSizeWithFalseConditionWhenPlayerIsLessThan5" />
-      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -514,19 +591,19 @@
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.tileMapTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.GameTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.GameTest.testStartGamePlayerFrames" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.tileMapTest.testSetMapSizeWithFalseConditionWhenPlayerIsLessThan5" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Game" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.GameTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.GameTest.testUpWithOutOfBounds" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.GameTest.testDownWithOutOfBounds" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.GameTest.testLeftWithOutOfBounds" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.GameTest.testRightWithOutOfBounds" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="JUnit.GameTest" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Game" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.tileMapTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.tileMapTest.testSetMapSizeWithFalseConditionWhenPlayerIsLessThan5" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.GameTest.testStartGamePlayerFrames" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.GameTest.testRightWithOutOfBounds" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.GameTest.testLeftWithOutOfBounds" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.GameTest.testDownWithOutOfBounds" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.GameTest.testUpWithOutOfBounds" />
       </list>
     </recent_temporary>
   </component>
@@ -545,44 +622,50 @@
       <updated>1521286264999</updated>
       <workItem from="1521286267687" duration="2982000" />
       <workItem from="1521453514563" duration="18036000" />
-      <workItem from="1522657871366" duration="5281000" />
+      <workItem from="1522657871366" duration="5797000" />
+      <workItem from="1522682610172" duration="10549000" />
+      <workItem from="1522970652013" duration="9042000" />
+      <workItem from="1523002248931" duration="7616000" />
+      <workItem from="1523109351971" duration="3416000" />
+      <workItem from="1523290693957" duration="8302000" />
+      <workItem from="1523514616408" duration="5061000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GameTest - 2018.04.02 at 10h 48m 20s.xml">
+    <history-entry file="GameTest - 2018.04.12 at 16h 41m 39s.xml">
       <configuration name="GameTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameTest - 2018.04.02 at 10h 50m 33s.xml">
+    <history-entry file="GameTest - 2018.04.12 at 16h 41m 56s.xml">
       <configuration name="GameTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameTest - 2018.04.02 at 10h 51m 17s.xml">
+    <history-entry file="GameTest - 2018.04.12 at 16h 43m 03s.xml">
       <configuration name="GameTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameTest - 2018.04.02 at 10h 51m 36s.xml">
-      <configuration name="GameTest" configurationId="JUnit" />
+    <history-entry file="GameTest_testDownWithOutOfBounds - 2018.04.12 at 16h 41m 18s.xml">
+      <configuration name="GameTest.testDownWithOutOfBounds" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameTest - 2018.04.02 at 10h 52m 28s.xml">
-      <configuration name="GameTest" configurationId="JUnit" />
+    <history-entry file="GameTest_testDownWithOutOfBounds - 2018.04.12 at 16h 41m 29s.xml">
+      <configuration name="GameTest.testDownWithOutOfBounds" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameTest - 2018.04.02 at 10h 56m 43s.xml">
-      <configuration name="GameTest" configurationId="JUnit" />
+    <history-entry file="GameTest_testLeftWithOutOfBounds - 2018.04.12 at 16h 42m 36s.xml">
+      <configuration name="GameTest.testLeftWithOutOfBounds" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameTest - 2018.04.02 at 11h 10m 18s.xml">
-      <configuration name="GameTest" configurationId="JUnit" />
+    <history-entry file="GameTest_testMain - 2018.04.12 at 16h 29m 13s.xml">
+      <configuration name="GameTest.testMain" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameTest - 2018.04.02 at 11h 15m 04s.xml">
-      <configuration name="GameTest" configurationId="JUnit" />
+    <history-entry file="GameTest_testMain - 2018.04.12 at 16h 36m 58s.xml">
+      <configuration name="GameTest.testMain" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameTest - 2018.04.02 at 11h 34m 06s.xml">
-      <configuration name="GameTest" configurationId="JUnit" />
+    <history-entry file="GameTest_testRightWithOutOfBounds - 2018.04.12 at 16h 42m 58s.xml">
+      <configuration name="GameTest.testRightWithOutOfBounds" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="tileMapTest - 2018.04.02 at 10h 51m 44s.xml">
-      <configuration name="tileMapTest" configurationId="JUnit" />
+    <history-entry file="GameTest_testUpWithOutOfBounds - 2018.04.12 at 16h 40m 43s.xml">
+      <configuration name="GameTest.testUpWithOutOfBounds" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26299000" />
+    <option name="totallyTimeSpent" value="70801000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1377" height="912" extended-state="6" />
@@ -595,20 +678,20 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29032257" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.261851" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29032257" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19112115" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21290323" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25733635" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20090294" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -625,11 +708,126 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/test/java/cps2002/game/PositionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="32" column="17" lean-forward="false" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#361#362#0" expanded="true" />
+            <element signature="e#400#401#0" expanded="true" />
+            <element signature="e#755#756#0" expanded="true" />
+            <element signature="e#781#782#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/cps2002/game/PlayerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#362#363#0" expanded="true" />
+            <element signature="e#403#404#0" expanded="true" />
+            <element signature="e#751#752#0" expanded="true" />
+            <element signature="e#780#781#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cps2002/game/Position.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="18" column="17" lean-forward="false" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+          <folding>
+            <element signature="e#447#448#0" expanded="true" />
+            <element signature="e#471#472#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cps2002/game/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2394">
+          <caret line="148" column="28" lean-forward="true" selection-start-line="148" selection-start-column="28" selection-end-line="148" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1028#1036#0" expanded="true" />
+            <element signature="e#1237#1245#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/cps2002/game/GameTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1332">
+          <caret line="83" column="5" lean-forward="false" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/emma/coverage.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1044">
+          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cps2002/game/tileMap.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/cps2002/game/tileMapTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/cps2002/game/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1890">
+          <caret line="118" column="5" lean-forward="true" selection-start-line="118" selection-start-column="5" selection-end-line="118" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1028#1036#0" expanded="true" />
+            <element signature="e#1237#1245#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/cps2002/game/GameTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1332">
+          <caret line="83" column="5" lean-forward="false" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cps2002/game/tileMap.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/cps2002/game/tileMapTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/cps2002/game/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1818">
+          <caret line="108" column="24" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1028#1036#0" expanded="true" />
+            <element signature="e#1237#1245#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/emma/coverage.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1044">
+          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/cps2002/task1/MessageTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="684">
@@ -648,10 +846,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding>
-            <element signature="e#83#84#0" expanded="false" />
-            <element signature="e#109#110#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -661,10 +855,6 @@
           <caret line="82" column="21" lean-forward="false" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#255#256#0" expanded="true" />
-            <element signature="e#285#286#0" expanded="true" />
-            <element signature="e#1527#1528#0" expanded="true" />
-            <element signature="e#1551#1552#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -675,24 +865,13 @@
           <caret line="88" column="47" lean-forward="false" selection-start-line="88" selection-start-column="47" selection-end-line="88" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1028#1036#0" expanded="true" />
+            <element signature="e#1237#1245#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/cps2002/game/tileMapTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1278">
-          <caret line="75" column="28" lean-forward="false" selection-start-line="75" selection-start-column="28" selection-end-line="75" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1485#1486#0" expanded="true" />
-            <element signature="e#1534#1535#0" expanded="true" />
-            <element signature="e#1580#1581#0" expanded="true" />
-            <element signature="e#1630#1631#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/cps2002/game/tileMapTest.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/cps2002/task1/CalculatorTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -707,14 +886,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cps2002/game/tileMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cps2002/game/tileMap.java" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -727,7 +899,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -763,10 +934,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="e#83#84#0" expanded="false" />
-            <element signature="e#109#110#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -783,7 +950,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -791,10 +957,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding>
-            <element signature="e#83#84#0" expanded="false" />
-            <element signature="e#109#110#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -837,56 +999,132 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cps2002/game/tileMap.java">
+    <entry file="file://$PROJECT_DIR$/emma/coverage.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="44" column="25" lean-forward="false" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
+        <state relative-caret-position="1044">
+          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/cps2002/game/tileMapTest.java">
+    <entry file="file://$PROJECT_DIR$/Chess_pdt60.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cps2002/game/tileMap.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/cps2002/game/tileMapTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/cps2002/game/Position.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="79" column="31" lean-forward="false" selection-start-line="79" selection-start-column="31" selection-end-line="79" selection-end-column="31" />
+        <state relative-caret-position="414">
+          <caret line="25" column="23" lean-forward="false" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+          <folding>
+            <element signature="e#447#448#0" expanded="true" />
+            <element signature="e#471#472#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map_player 2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="5" lean-forward="false" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cps2002/game/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="28" column="25" lean-forward="false" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/cps2002/game/MapTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1485#1486#0" expanded="true" />
-            <element signature="e#1534#1535#0" expanded="true" />
-            <element signature="e#1580#1581#0" expanded="true" />
-            <element signature="e#1630#1631#0" expanded="true" />
+            <element signature="e#2977#2978#0" expanded="true" />
+            <element signature="e#3026#3027#0" expanded="true" />
+            <element signature="e#3142#3143#0" expanded="true" />
+            <element signature="e#3192#3193#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/cps2002/game/PlayerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="8" column="46" lean-forward="false" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#362#363#0" expanded="true" />
+            <element signature="e#403#404#0" expanded="true" />
+            <element signature="e#751#752#0" expanded="true" />
+            <element signature="e#780#781#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/cps2002/game/PositionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="8" column="56" lean-forward="false" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#361#362#0" expanded="true" />
+            <element signature="e#400#401#0" expanded="true" />
+            <element signature="e#755#756#0" expanded="true" />
+            <element signature="e#781#782#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map_player 1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1980">
+          <caret line="13" column="14" lean-forward="false" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cps2002/game/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="97" column="8" lean-forward="false" selection-start-line="97" selection-start-column="8" selection-end-line="97" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/cps2002/game/GameTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="639">
+          <caret line="394" column="22" lean-forward="false" selection-start-line="394" selection-start-column="22" selection-end-line="394" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cps2002/game/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="108" column="24" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+        <state relative-caret-position="3240">
+          <caret line="180" column="62" lean-forward="false" selection-start-line="180" selection-start-column="62" selection-end-line="180" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/cps2002/game/GameTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="83" column="5" lean-forward="false" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#255#256#0" expanded="true" />
-            <element signature="e#285#286#0" expanded="true" />
-            <element signature="e#1527#1528#0" expanded="true" />
-            <element signature="e#1551#1552#0" expanded="true" />
+            <element signature="e#1028#1036#0" expanded="true" />
+            <element signature="e#1237#1245#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/emma/coverage.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1781">
-          <caret line="21" column="31" lean-forward="true" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

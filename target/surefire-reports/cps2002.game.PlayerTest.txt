@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: cps2002.game.GameTest
+Test set: cps2002.game.PlayerTest
 -------------------------------------------------------------------------------
-Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 sec - in cps2002.game.GameTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.087 sec - in cps2002.game.PlayerTest

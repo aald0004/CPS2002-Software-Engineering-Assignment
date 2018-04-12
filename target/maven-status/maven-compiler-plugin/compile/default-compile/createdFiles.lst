@@ -1,4 +1,6 @@
 cps2002/game/Game.class
+cps2002/game/Position.class
+cps2002/game/Map.class
+cps2002/game/Player.class
 cps2002/task1/Message.class
-cps2002/game/tileMap.class
 cps2002/task1/Calculator.class
