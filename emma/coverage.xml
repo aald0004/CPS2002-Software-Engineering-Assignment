@@ -1,42 +1,42 @@
-<?xml version="1.0" encoding="UTF-8"?><!-- EMMA v2.1.5320 (stable) report, generated Thu Apr 12 16:48:25 CEST 2018 -->
+<?xml version="1.0" encoding="UTF-8"?><!-- EMMA v2.1.5320 (stable) report, generated Thu Apr 12 19:20:10 CEST 2018 -->
 
 <report>
   <stats>
     <packages value="2"/>
     <classes value="6"/>
-    <methods value="29"/>
+    <methods value="32"/>
     <srcfiles value="6"/>
-    <srclines value="158"/>
+    <srclines value="214"/>
   </stats>
   <data>
     <all name="all classes">
       <coverage type="class, %" value="100% (6/6)"/>
-      <coverage type="method, %" value="90%  (26/29)"/>
-      <coverage type="block, %" value="67%  (459/686)"/>
-      <coverage type="line, %" value="71%  (112/158)"/>
+      <coverage type="method, %" value="91%  (29/32)"/>
+      <coverage type="block, %" value="71%  (703/985)"/>
+      <coverage type="line, %" value="71%  (152.2/214)"/>
 
       <package name="cps2002.game">
         <coverage type="class, %" value="100% (4/4)"/>
-        <coverage type="method, %" value="87%  (20/23)"/>
-        <coverage type="block, %" value="66%  (443/670)"/>
-        <coverage type="line, %" value="70%  (106/152)"/>
+        <coverage type="method, %" value="88%  (23/26)"/>
+        <coverage type="block, %" value="71%  (687/969)"/>
+        <coverage type="line, %" value="70%  (146.2/208)"/>
 
         <srcfile name="Game.java">
           <coverage type="class, %" value="100% (1/1)"/>
-          <coverage type="method, %" value="73%  (8/11)"/>
-          <coverage type="block, %" value="53%  (257/484)"/>
-          <coverage type="line, %" value="56%  (59/105)"/>
+          <coverage type="method, %" value="79%  (11/14)"/>
+          <coverage type="block, %" value="64%  (501/783)"/>
+          <coverage type="line, %" value="62%  (99.2/161)"/>
 
           <class name="Game">
             <coverage type="class, %" value="100% (1/1)"/>
-            <coverage type="method, %" value="73%  (8/11)"/>
-            <coverage type="block, %" value="53%  (257/484)"/>
-            <coverage type="line, %" value="56%  (59/105)"/>
+            <coverage type="method, %" value="79%  (11/14)"/>
+            <coverage type="block, %" value="64%  (501/783)"/>
+            <coverage type="line, %" value="62%  (99.2/161)"/>
 
             <method name="gameLoop (): void">
               <coverage type="method, %" value="0%   (0/1)"/>
-              <coverage type="block, %" value="0%   (0/81)"/>
-              <coverage type="line, %" value="0%   (0/12)"/>
+              <coverage type="block, %" value="0%   (0/110)"/>
+              <coverage type="line, %" value="0%   (0/21)"/>
             </method>
             <method name="main (String []): void">
               <coverage type="method, %" value="0%   (0/1)"/>
@@ -53,10 +53,20 @@
               <coverage type="block, %" value="63%  (33/52)"/>
               <coverage type="line, %" value="71%  (5/7)"/>
             </method>
+            <method name="generateHTMLFiles (String, int): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="72%  (47/65)"/>
+              <coverage type="line, %" value="70%  (11.2/16)"/>
+            </method>
             <method name="executeMove (String, Player, int): void">
               <coverage type="method, %" value="100% (1/1)"/>
-              <coverage type="block, %" value="94%  (89/95)"/>
-              <coverage type="line, %" value="96%  (25/26)"/>
+              <coverage type="block, %" value="89%  (89/100)"/>
+              <coverage type="line, %" value="93%  (25/27)"/>
+            </method>
+            <method name="revealColour (int, int, int): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="92%  (34/37)"/>
+              <coverage type="line, %" value="86%  (6/7)"/>
             </method>
             <method name="Game (): void">
               <coverage type="method, %" value="100% (1/1)"/>
@@ -68,10 +78,15 @@
               <coverage type="block, %" value="100% (23/23)"/>
               <coverage type="line, %" value="100% (4/4)"/>
             </method>
-            <method name="revealColour (int, int, int): void">
+            <method name="htmlString (int): String">
               <coverage type="method, %" value="100% (1/1)"/>
-              <coverage type="block, %" value="100% (31/31)"/>
-              <coverage type="line, %" value="100% (5/5)"/>
+              <coverage type="block, %" value="100% (153/153)"/>
+              <coverage type="line, %" value="100% (21/21)"/>
+            </method>
+            <method name="printMap (): void">
+              <coverage type="method, %" value="100% (1/1)"/>
+              <coverage type="block, %" value="100% (41/41)"/>
+              <coverage type="line, %" value="100% (7/7)"/>
             </method>
             <method name="setInitialPos (): void">
               <coverage type="method, %" value="100% (1/1)"/>

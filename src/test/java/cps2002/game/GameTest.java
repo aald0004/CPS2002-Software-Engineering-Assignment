@@ -4,6 +4,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.File;
+import java.io.IOException;
+
 import static org.junit.Assert.*;
 
 /* this class tests the functionality of the Game class */
@@ -396,6 +399,176 @@ public class GameTest {
     }
 
 
+    // Test htmlString
+    @Test
+    public void testHTMLString(){
+
+        // set up the required configurations
+        g.numOfPlayers = 2;
+        g.tm = tm;
+        g.tm.size = 5;
+        g.addPlayers();
+        g.players.get(0).setPosition(new Position(0,0));
+        g.players.get(0).tm.generatePlayerMap();
+        g.players.get(0).tm.revealColour(0,0,'G');
+        g.players.get(0).tm.revealColour(0,1,'G');
+        g.players.get(0).tm.revealColour(0,2,'w');
+        g.players.get(0).tm.revealColour(0,3,'t');
+        String html = g.htmlString(0);
+
+        // html file expected
+        String expectedHTML = "<!DOCTYPE html>\n" +
+                "<html>\n" +
+                "<head>\n" +
+                "<style>\n" +
+                "\n" +
+                "/* set the display type to a table */\n" +
+                ".table{\n" +
+                "display: table;\n" +
+                "width: 100%;\n" +
+                "}\n" +
+                "\n" +
+                "/* set the display type to a table row */\n" +
+                ".tableRow {\n" +
+                "display: table-row;\n" +
+                "}\n" +
+                "\n" +
+                "/* set the grass tile, treasure tile and water tile to have a border,\n" +
+                "padding and set their display type */\n" +
+                ".grassTile, .treasureTile, .waterTile, .greyTile {\n" +
+                "border: 1px solid #999999;\n" +
+                "display: table-cell;\n" +
+                "padding: 10px 10px;\n" +
+                "}\n" +
+                "\n" +
+                "/* set the grass tile colour to green */\n" +
+                ".grassTile{\n" +
+                "background-color:green;\n" +
+                "}\n" +
+                "\n" +
+                ".greyTile{\n" +
+                "background-color:grey;\n" +
+                "}\n" +
+                "\n" +
+                "/* set the treasure tile colour to yellow */\n" +
+                ".treasureTile{\n" +
+                "background-color:yellow;\n" +
+                "}\n" +
+                "\n" +
+                "/* set the water tile colour to blue */\n" +
+                ".waterTile{\n" +
+                "background-color:blue;\n" +
+                "}\n" +
+                "\n" +
+                ".tableBody {\n" +
+                "display: table-row-group;\n" +
+                "}\n" +
+                "\n" +
+                "/* set the font size and width of the title */\n" +
+                ".title{\n" +
+                "font-size: 17px;\n" +
+                "width: 25%;\n" +
+                "}\n" +
+                "\n" +
+                "</style\n" +
+                "\n" +
+                "></head>\n" +
+                "\n" +
+                "<body>\n" +
+                "<div class = \"title\">\n" +
+                "<h3> Player 1 Map</h3>\n" +
+                "\n" +
+                "<br>\n" +
+                "\n" +
+                "<div class=\"table\">\u2028\n" +
+                "<div class=\"tableBody\">\n" +
+                "<div class=\"tableRow\">\n" +
+                "\n" +
+                "<div class=\"grassTile\" style = \"background-position:center;background-image:url('./Chess_pdt60.png')\"></div>\n" +
+                "<div class=\"greyTile\">&nbsp;</div>\n" +
+                "<div class=\"greyTile\">&nbsp;</div>\n" +
+                "<div class=\"greyTile\">&nbsp;</div>\n" +
+                "<div class=\"greyTile\">&nbsp;</div>\n" +
+                "</div>\n" +
+                "\n" +
+                "<div class=\"tableRow\">\n" +
+                "\n" +
+                "<div class=\"grassTile\">&nbsp;</div>\n" +
+                "<div class=\"greyTile\">&nbsp;</div>\n" +
+                "<div class=\"greyTile\">&nbsp;</div>\n" +
+                "<div class=\"greyTile\">&nbsp;</div>\n" +
+                "<div class=\"greyTile\">&nbsp;</div>\n" +
+                "</div>\n" +
+                "\n" +
+                "<div class=\"tableRow\">\n" +
+                "\n" +
+                "<div class=\"waterTile\">&nbsp;</div>\n" +
+                "<div class=\"greyTile\">&nbsp;</div>\n" +
+                "<div class=\"greyTile\">&nbsp;</div>\n" +
+                "<div class=\"greyTile\">&nbsp;</div>\n" +
+                "<div class=\"greyTile\">&nbsp;</div>\n" +
+                "</div>\n" +
+                "\n" +
+                "<div class=\"tableRow\">\n" +
+                "\n" +
+                "<div class=\"treasureTile\">&nbsp;</div>\n" +
+                "<div class=\"greyTile\">&nbsp;</div>\n" +
+                "<div class=\"greyTile\">&nbsp;</div>\n" +
+                "<div class=\"greyTile\">&nbsp;</div>\n" +
+                "<div class=\"greyTile\">&nbsp;</div>\n" +
+                "</div>\n" +
+                "\n" +
+                "<div class=\"tableRow\">\n" +
+                "\n" +
+                "<div class=\"greyTile\">&nbsp;</div>\n" +
+                "<div class=\"greyTile\">&nbsp;</div>\n" +
+                "<div class=\"greyTile\">&nbsp;</div>\n" +
+                "<div class=\"greyTile\">&nbsp;</div>\n" +
+                "<div class=\"greyTile\">&nbsp;</div>\n" +
+                "</div>\n" +
+                "\n" +
+                "</div>\n" +
+                "</div>\n" +
+                "</div>\n" +
+                "</body>\n" +
+                "</html>";
+
+        assertEquals(expectedHTML,html);
+
+
+    }
+
+    // test if the file is being created
+    @Test
+    public void testGenerateHTMLFiles(){
+        // set up the required configurations
+        g.numOfPlayers = 2;
+        g.tm = tm;
+        g.tm.size = 5;
+        g.addPlayers();
+        g.players.get(0).setPosition(new Position(0,0));
+        g.players.get(0).tm.generatePlayerMap();
+        g.players.get(0).tm.revealColour(0,0,'G');
+        g.players.get(0).tm.revealColour(0,1,'G');
+        g.players.get(0).tm.revealColour(0,2,'w');
+        g.players.get(0).tm.revealColour(0,3,'t');
+        String html = g.htmlString(0);
+
+        // generate the html file
+        try {
+            g.generateHTMLFiles(html, 0);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        File file = new File("htmlFiles/map_player 1.html");
+
+        // check if file is created
+        assertEquals(file.exists(),true);
+
+
+    }
 
     // set the objects to null
     @After

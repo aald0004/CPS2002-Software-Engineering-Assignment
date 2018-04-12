@@ -1,20 +1,11 @@
 package cps2002.game;
 
-import javax.swing.JOptionPane;
-import java.awt.Color;
-import java.awt.Container;
-import java.awt.GridLayout;
 import java.util.ArrayList;
-import java.awt.*;
-import javax.swing.JPanel;
-import javax.swing.JFrame;
 import java.util.Random;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.File;
 import java.io.FileWriter;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 import java.util.Scanner;
 
 
@@ -29,7 +20,7 @@ public class Game {
 
     // set the constraints for choosing the number of players
     public static final int MAX_PLAYERS = 8;
-    public static final int MIN_PLAYERS = 2;
+    public static final int MIN_PLAYERS = 1;
 
     // holds the number of players
     int numOfPlayers = 0;
@@ -60,6 +51,7 @@ public class Game {
 
     // main game loop
     public void startGame(){
+
 
         /* choose the number of players
         if the number of players does not obey the constraints, output an error
@@ -167,12 +159,12 @@ public class Game {
             /* for loop to generate the HTML file of each player and ask the user to enter their
             next move */
             for(int i = 0; i < players.size(); i++) {
-               /* try {
+                try {
                     generateHTMLFiles(htmlString(i), i);
 
                 } catch(IOException e){
                     e.printStackTrace();
-                }*/
+                }
 
                 // ask the user to enter their move
                 System.out.println("Enter Move");
@@ -206,18 +198,18 @@ public class Game {
         }
 
         // generate the HTML file for each player
-        /*for(int i = 0; i < players.size(); i++) {
+        for(int i = 0; i < players.size(); i++) {
             try {
                 generateHTMLFiles(htmlString(i), i);
 
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }*/
+        }
     }
 
 
-    /*public void printMap(){
+    public void printMap(){
 
         System.out.println("Player map");
 
@@ -230,7 +222,7 @@ public class Game {
         }
 
         System.out.println("*********************");
-    }*/
+    }
 
     /* generate a random Position
     * Returns: Position-> player's starting position*/
@@ -360,6 +352,8 @@ public class Game {
 
         // if the new position is a water tile, set the player's position to its starting position
         if(tm.getTileType(x,y) == 'w'){
+
+            revealColour(x,y,index);
             player.setPosition(player.startingPosition);
 
             //revealColour(x,y,index, prevx, prevy);
@@ -384,6 +378,8 @@ public class Game {
         // retrieve the tile type
         char tileType = tm.getTileType(x,y);
 
+
+
         // set the tile type on the player's map
         if(tileType == 'g'){
             players.get(index).tm.revealColour(x,y,'G');
@@ -392,107 +388,147 @@ public class Game {
             players.get(index).tm.revealColour(x,y,tileType);
         }
 
+        // set treasure found to true
+        if(tileType == 't'){
+            treasureFound = true;
+        }
+
     }
 
-    /*public String htmlString(int num){
+    /* generate the html string
+    * Parameters: num-> index of the player in the array, to include which player in the file*/
+    public String htmlString(int num) {
         num++;
+
+        // the html file contains the styling
         String html = "<!DOCTYPE html>\n" +
                 "<html>\n" +
                 "<head>\n" +
-                "\n" +
-                "<style>\n" +
-                "* {\n" +
-                "    box-sizing: border-box;\n" +
-                "}\n" +
-                "\n" +
-                "\n" +
-                "img {\n"+
-                "max-width: 100%;\n"+
-                "max-height: 100%;\n"+
-                "}\n" +
-                ".column {\n" +
-                "    float: left;\n" +
-                "    width: 10%;\n" +
-                "    padding: 10px;\n" +
-                "}\n" +
-                "\n" +
-                "\n" +
-                ".row:after {\n" +
-                "    content: \"\";\n" +
-                "    display: table;\n" +
-                "    clear: both;\n" +
-                "}\n" +
-                "\n" +
-                ".title{\n" +
-                "\t\n" +
-                "    font-size: 17px;\n" +
-                "    width: 25%;\n" +
-                "}\n" +
-                "\n" +
-                "</style>\n" +
-                "</head>\n" +
-                "<body>\n" +
+                "<style>\n\n" +
+                "/* set the display type to a table */\n" +
+                ".table{\n" +
+                "display: table;\n" +
+                "width: 100%;\n" +
+                "}\n\n" +
+                "/* set the display type to a table row */\n" +
+                ".tableRow {\n" +
+                "display: table-row;\n" +
+                "}\n\n" +
+                "/* set the grass tile, treasure tile and water tile to have a border,\n" +
+                "padding and set their display type */\n" +
+                ".grassTile, .treasureTile, .waterTile, .greyTile {\n" +
+                "border: 1px solid #999999;\n" +
+                "display: table-cell;\n" +
+                "padding: 10px 10px;\n" +
+                "}\n\n" +
+                "/* set the grass tile colour to green */\n" +
+                ".grassTile{\n" +
+                "background-color:green;\n" +
+                "}\n\n" +
+                ".greyTile{\n" +
+                "background-color:grey;\n" +
+                "}\n\n" +
+                "/* set the treasure tile colour to yellow */\n" +
+                ".treasureTile{\n" +
+                "background-color:yellow;\n" +
+                "}\n\n" +
+                "/* set the water tile colour to blue */\n" +
+                ".waterTile{\n" +
+                "background-color:blue;\n" +
+                "}\n\n"+
+                ".tableBody {\n"+
+                "display: table-row-group;\n"+
+                "}\n\n"+
+                "/* set the font size and width of the title */\n"+
+                ".title{\n"+
+                "font-size: 17px;\n"+
+                "width: 25%;\n"+
+                "}\n\n"+
+                "</style\n\n>"+
+                "</head>\n\n"+
+                "<body>\n"+
                 "<div class = \"title\">\n"+
-                "<h3> Player " + num + " Map</h3>\n"+
-                "<br>\n" +
-                "\n";
-                String colour = "";
-                num--;
-                printMap();
-                for(int i = 0; i < tm.size; i++){
+                "<h3> Player "+num+" Map</h3>\n\n"+
+                "<br>\n\n"+
+                "<div class=\"table\"> \n"+
+                "<div class=\"tableBody\">\n";
 
-                    html = html + "<div class=\"row\">\n" +
-                            "\n";
 
-                    for(int j = 0; j < tm.size; j++){
 
-                        if(players.get(num).tm.getTileType(j,i) == 'g'){
-                            colour = "#aaa";
-                        } else if(players.get(num).tm.getTileType(j,i) == 'w'){
-                            colour = "#0000FF";
-                        } else if(players.get(num).tm.getTileType(j,i) == 't'){
-                            colour = "#FFFF00";
-                        } else {
-                            colour = "#008000";
-                        }
+        // add the rows and the different tiles based on the player's map
+        String tileType = "";
+        num--;
+        printMap();
+        for(int i = 0; i < tm.size; i++){
 
-                        if(i == players.get(num).position.gety() && j == players.get(num).position.getx()){
-                            html = html + "  <div class=\"column\" style=\"background-color:" + colour + ";\">\n"+
-                            "<img src = \"./Chess_pdt60.png\">\n" +
-                                    "  </div>\n" +
-                                    "\n";
-                        } else {
+            html = html + "<div class=\"tableRow\">\n\n";
 
-                            html = html + "  <div class=\"column\" style=\"background-color:" + colour + ";\">\n" +
-                                    "  </div>\n" +
-                                    "\n";
-                        }
-                    }
 
-                    html = html + "</div>";
+            for(int j = 0; j < tm.size; j++){
+
+                if(players.get(num).tm.getTileType(j,i) == 'g'){
+                    tileType = "greyTile";
+                } else if(players.get(num).tm.getTileType(j,i) == 'w'){
+                    tileType = "waterTile";
+                } else if(players.get(num).tm.getTileType(j,i) == 't'){
+                    tileType = "treasureTile";
+                } else {
+                    tileType = "grassTile";
                 }
-                html = html +
-                "\n" +
-                "\n" +
+
+                // add the player image to its current position
+                if(i == players.get(num).position.gety() && j == players.get(num).position.getx()){
+
+                    html = html + "<div class=\""+tileType+"\" " +
+                            "style = \"background-position:center;" +
+                            "background-image:url('./Chess_pdt60.png')\">" +
+                            "</div>\n";
+
+                } else {
+
+
+                    html = html + "<div class=\""+tileType+"\">&nbsp;</div>\n";
+                }
+            }
+
+            html = html + "</div>\n\n";
+
+        }
+
+        html = html + "</div>\n"+
                 "</div>\n"+
-                "</body>\n" +
+                "</div>\n"+
+                "</body>\n"+
                 "</html>";
 
         return html;
 
     }
 
+    /* save the html file
+    * Parameters: html-> html string to be saved
+    *             num-> index of the player in the array, used for the file name
+    * Throws exception if error occurs in creating and saving file*/
     public void generateHTMLFiles(String html, int num) throws IOException{
         BufferedWriter bw = null;
 
         try {
             num++;
-            File file = new File("map_player "+num+".html");
-            file.createNewFile();
+
+            // create the directory to store the files
+            File directory = new File("htmlFiles");
+            if(!directory.exists()){
+                directory.mkdir();
+            }
+
+            // create the html file
+            File file = new File("htmlFiles/map_player "+num+".html");
+            file.createNewFile();;
 
             bw = new BufferedWriter(new FileWriter(file));
 
 
+            // write the string to the buffered writer
             bw.write(html);
 
             bw.flush();
@@ -501,15 +537,16 @@ public class Game {
 
         } catch(IOException e) {
 
-            // if I/O error occurs
+            // if I/O error occurs print the stack trace
             e.printStackTrace();
         } finally {
 
+            // close the buffered writer
             if(bw!=null)
                 bw.close();
         }
 
-    }*/
+    }
 
 
 
