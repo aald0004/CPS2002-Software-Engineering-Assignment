@@ -20,13 +20,11 @@ public class Game {
 
     // set the constraints for choosing the number of players
     public static final int MAX_PLAYERS = 8;
-    public static final int MIN_PLAYERS = 1;
+    public static final int MIN_PLAYERS = 2;
 
     // holds the number of players
     int numOfPlayers = 0;
 
-    // holds the board size
-    int boardSize = 0;
 
     // stores the players
     ArrayList<Player> players = new ArrayList<Player>();
@@ -44,15 +42,20 @@ public class Game {
     // random function for setting the players' starting positions
     Random rand = new Random();
 
+    // stores the map size
     int mapSize = 0;
 
     // variable containing the game map
     Map tm;
 
+    // keep track of the number of turns
+    int turns = 0;
+
+    // holds the index of the players which have discovered the treasure tile
+    ArrayList<Integer> winningIndexes = new ArrayList<Integer>();
 
 
-
-    // main game loop
+    // set up initial settings
     public void startGame(){
 
         // delete the html files in HTMLFiles folder
@@ -62,7 +65,10 @@ public class Game {
             if (!file.isDirectory() && !(file.getName().equals("Chess_pdt60.png")))
                 file.delete();
 
+        // choose the number of players
         choosePlayers(sc);
+
+        // choose the map size
         chooseMapSize(sc);
 
         // set the map size
@@ -74,8 +80,6 @@ public class Game {
         tm.addTreasureTile();
 
 
-        // set the board size
-        boardSize = tm.size;
 
         // add the players to the array list
         addPlayers();
@@ -159,9 +163,9 @@ public class Game {
     }
 
 
-
+    // method to set the initial position of the players
     public void setInitialPos(){
-        // loop through all the players and set their starint position
+        // loop through all the players and set their staring position
         for(int i = 0; i < players.size(); i++){
             // create a new Position
             Position startPos = startingPos();
@@ -180,24 +184,36 @@ public class Game {
      * run the moves in the current turn
      * repeat until treasure is found */
     public void gameLoop(Scanner scanner){
-        int nextPlayerIndex = -1;
-        // repeat the main functionality until the treasure is found
+        printMap();
+
+        // repeat the main functionality until the treasure is found and the number of moves in a turn is 0
         while(treasureFound == false && currentSetOfMoves.size() == 0){
 
+            // increment the number of turns
+            turns++;
 
-            /* for loop to generate the HTML file of each player and ask the user to enter their
-            next move */
+            // generate the HTML file for each player
             for(int i = 0; i < players.size(); i++) {
                 try {
                     generateHTMLFiles(htmlString(i), i);
 
-                } catch(IOException e){
+                } catch (IOException e) {
+
+                    // if error occurs, print the stack trace
                     e.printStackTrace();
                 }
+            }
+
+            /* for loop to ask the user to enter their
+            next move */
+            for(int i = 0; i < players.size(); i++) {
 
                 // ask the user to enter their move
                 System.out.println("Enter Move");
                 String choice = scanner.nextLine();
+
+                // convert to upper case
+                choice = choice.toUpperCase();
 
                 // add the user's move to the array list containing the moves
                 currentSetOfMoves.add(choice);
@@ -214,6 +230,17 @@ public class Game {
 
                 // reveal the tile colour of the newly discovered tile
                 revealColour(players.get(j).position.getx(), players.get(j).position.gety(), j);
+
+                // generate the HTML file for each player
+                try {
+                    generateHTMLFiles(htmlString(j), j);
+
+                } catch(IOException e){
+
+                    // print the stack trace if an error occurs
+                    e.printStackTrace();
+                }
+
 
 
             }
@@ -232,13 +259,26 @@ public class Game {
                 generateHTMLFiles(htmlString(i), i);
 
             } catch (IOException e) {
+                // print the stack trace if an error occurs
                 e.printStackTrace();
             }
         }
+
+        // Output the winners
+        System.out.println("Winning player(s): ");
+        for(int i = 0; i < winningIndexes.size(); i++){
+            int playerNum = winningIndexes.get(i)+1;
+            System.out.println("Player "+ playerNum);
+        }
+
+        // output the number of turns
+        System.out.println("After " + turns + " turns.");
+
+
     }
 
 
-    /*public void printMap(){
+    public void printMap(){
 
 
 
@@ -251,7 +291,7 @@ public class Game {
         }
 
         System.out.println("*********************");
-    }*/
+    }
 
     /* generate a random Position
     * Returns: Position-> player's starting position*/
@@ -265,13 +305,15 @@ public class Game {
 
 
 
-        // check that the generated Position is not a water tile position
+        // check that the generated Position is not a water tile position, if it is
+        // repeat the process
         while(tm.getTileType(x,y) == 'w') {
             x = rand.nextInt(tm.size+1);
             y = rand.nextInt(tm.size+1);
         }
 
 
+        // create a new Position with the x and y coordinates generated
         Position pos = new Position(x,y);
 
         return pos;
@@ -382,7 +424,10 @@ public class Game {
         // if the new position is a water tile, set the player's position to its starting position
         if(tm.getTileType(x,y) == 'w'){
 
+            // reveal the colour
             revealColour(x,y,index);
+
+            // set the position to starting position
             player.setPosition(player.startingPosition);
 
         } else {
@@ -416,8 +461,9 @@ public class Game {
             players.get(index).tm.revealColour(x,y,tileType);
         }
 
-        // set treasure found to true
+        // set treasure found to true and add player index to array list of winningIndexes
         if(tileType == 't'){
+            winningIndexes.add(index);
             treasureFound = true;
         }
 
@@ -487,7 +533,6 @@ public class Game {
         // add the rows and the different tiles based on the player's map
         String tileType = "";
         num--;
-        //printMap();
         for(int i = 0; i < tm.size; i++){
 
             html = html + "<div class=\"tableRow\">\n\n";
@@ -516,7 +561,7 @@ public class Game {
 
                 } else {
 
-
+                    // add the div to the html file
                     html = html + "<div class=\""+tileType+"\">&nbsp;</div>\n";
                 }
             }
@@ -525,6 +570,7 @@ public class Game {
 
         }
 
+        // finish off by closing the tags
         html = html + "</div>\n"+
                 "</div>\n"+
                 "</div>\n"+
@@ -562,11 +608,11 @@ public class Game {
 
         } catch(IOException e) {
 
-            // if I/O error occurs print the stack trace
+            // if error occurs print the stack trace
             e.printStackTrace();
         } finally {
 
-            // close the buffered writer
+            // close the buffered writer if it is not null
             if(bw!=null)
                 bw.close();
         }

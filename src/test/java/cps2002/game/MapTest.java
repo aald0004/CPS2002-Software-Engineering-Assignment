@@ -300,6 +300,7 @@ public class MapTest {
 
         boolean morethan2found = false;
 
+        // check if more than 2 water tiles are found
         for(int i = 0; i < tm.size;i++){
 
             for(int j = 0;j < tm.size;j++){
@@ -329,6 +330,8 @@ public class MapTest {
         tm.map = tm.setMap();
 
         int[][] numOfBlueNeigh = new int[tm.size][tm.size];
+
+
         numOfBlueNeigh[0][0] = 1;
         numOfBlueNeigh[0][1] = 1;
         numOfBlueNeigh[0][2] = 1;

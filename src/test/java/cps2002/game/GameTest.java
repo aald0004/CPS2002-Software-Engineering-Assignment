@@ -3,13 +3,10 @@ package cps2002.game;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.Rule;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.ByteArrayInputStream;
 import java.lang.*;
-import java.io.InputStream;
 import java.util.Scanner;
 
 
@@ -87,27 +84,6 @@ public class GameTest {
         assertEquals(true, ans);
     }
 
-    /*@Test
-    public void testMain(){
-
-        Game.main(new String[] {""});
-        assertEquals(0, g.numOfPlayers);
-    }*/
-
-    /*@Test
-    public void testStartGamePlayerFrames(){
-        g.numOfPlayers = 4;
-        g.tm = tm;
-        g.tm.size = 5;
-        g.addPlayers();
-        g.setInitialPos();
-        g.boardSize = 7;
-        g.setFrames();
-        int size = g.playerFrames.size();
-        assertEquals(4,size);
-    }*/
-
-
     // Testing addPlayers by adding players to the array list and checking that the
     // size of the list increased
     @Test
@@ -172,7 +148,7 @@ public class GameTest {
 
         assertEquals(expectedPos.getx(), spos.getx());
 
-        // assign nulls to new Position(s) created
+        // assign nulls to new Positions created
         expectedPos = null;
         spos = null;
     }
@@ -643,6 +619,7 @@ public class GameTest {
     @Test
     public void testGameLoop(){
 
+        // set up required variables
         g.numOfPlayers = 2;
         g.tm = tm;
         g.tm.size = 7;
@@ -650,8 +627,12 @@ public class GameTest {
         g.tm.addWaterTiles();
         g.tm.addTreasureTile();
         g.addPlayers();
+        // set player to just below the treasure
         g.players.get(0).setPosition(new Position(g.tm.getTreasurex(),g.tm.getTreasurey()+1));
+
         g.players.get(1).setPosition(new Position(1,1));
+
+        // simulated input
         String moves = "U\nL";
         g.gameLoop(new Scanner(moves));
         assertEquals(true, g.treasureFound);

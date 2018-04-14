@@ -26,7 +26,8 @@ public class Player {
         tm.generatePlayerMap();
     }
 
-    // set the player's Position
+    /* set the player's Position
+    * Parameters: newPos-> the player's new position */
     public boolean setPosition(Position newPos){
 
         position = newPos;

@@ -24,9 +24,13 @@ public class Map {
     // used to generate random map coordinates
     Random rand = new Random();
 
+    // stores the x coordinate of the treasure tile
     private int treasureTile_x = -1;
+
+    // stores the y coordinate of the treasure tile
     private int treasureTile_y = -1;
 
+    // stores the number of water tiles surrounding a tile
     int[][] numberOfWaterNeighbours;
 
 
@@ -93,7 +97,9 @@ public class Map {
     * Returns: char[][]-> returns a 2D-array containing the game map.
     * g symbolises a grey tile
     * t symbolises a treasure tile
-    * w symbolises a water tile */
+    * w symbolises a water tile
+     * however, this method fills the map with just grey tiles.
+     * The water tiles and the treasure tiles are in a separate method*/
     public char[][] setMap(){
 
         // declare a new 2D char array
@@ -117,6 +123,7 @@ public class Map {
 
         numberOfWaterNeighbours = new int[size][size];
 
+        // set the initial water neighbours to 0
         for(int i = 0; i < size; i++){
             for(int j = 0; j < size; j++){
                 numberOfWaterNeighbours[i][j] = 0;
@@ -133,6 +140,7 @@ public class Map {
         x = 1;
         y = 4;
 
+        // set a water tile
         map[y][x] = 'w';
 
         // increase number of neighbours in tile below
@@ -161,6 +169,7 @@ public class Map {
         // fill the map with water tiles
         for(int i = 1; i < numToGenerate;i++){
 
+            // generate a random x and y coordinate
             x = rand.nextInt(size - 1);
             y = rand.nextInt(size - 1);
 
@@ -170,6 +179,7 @@ public class Map {
                 y = rand.nextInt(size - 1);
             }
 
+            // check if (x,y) is a valid water tile position, if no decrement i
             if(checkIfValidWaterPosition(x,y) == false){
                 i--;
             }
@@ -178,27 +188,16 @@ public class Map {
 
     }
 
-   /* public void printMap(){
-
-
-
-        for(int i = 0; i < size; i ++){
-            for(int j = 0; j < size; j++){
-
-                System.out.println("("+i+","+j+")");
-                System.out.print(numberOfWaterNeighbours[i][j]);
-            }
-            System.out.println("\n");
-        }
-
-        System.out.println("*********************");
-    }*/
-
+    /*  Determines if a water tile can be placed in a
+    * particular position.
+    * Parameters: x-> x coordinate of the proposed water tile
+    *             y-> y coordinate of the proposed water tile
+    *Returns: boolean-> true if valid position, otherwise false*/
     public boolean checkIfValidWaterPosition(int x, int y) {
 
         boolean valid = false;
 
-        // check if the new water tile does not create a box around a green tile, when the blue tile is not in the border rows
+        // check if the new water tile does not create a box around a green tile, when the blue tile is not on the border
         if (y < size - 1 && y> 0 && x < size - 1 && x > 0) {
             if (numberOfWaterNeighbours[y + 1][x] < 3 &&
                     numberOfWaterNeighbours[y - 1][x] < 3 &&
@@ -207,6 +206,7 @@ public class Map {
 
                 map[y][x] = 'w';
 
+                // update the neighbours
                 numberOfWaterNeighbours[y][x - 1] = numberOfWaterNeighbours[y][x - 1] + 1;
                 numberOfWaterNeighbours[y][x + 1] = numberOfWaterNeighbours[y][x + 1] + 1;
                 numberOfWaterNeighbours[y - 1][x] = numberOfWaterNeighbours[y - 1][x] + 1;
@@ -236,6 +236,7 @@ public class Map {
 
                 map[y][x] = 'w';
 
+                // update the neighbours
                 numberOfWaterNeighbours[y][x + 1] = numberOfWaterNeighbours[y][x + 1] + 1;
                 numberOfWaterNeighbours[y - 1][x] = numberOfWaterNeighbours[y - 1][x] + 1;
                 numberOfWaterNeighbours[y + 1][x] = numberOfWaterNeighbours[y + 1][x] + 1;
@@ -250,12 +251,14 @@ public class Map {
 
         // if water tile is in the last column
         if (x == size - 1 && valid == false) {
+            // if tile will not box in green tile, change to water tile
             if (numberOfWaterNeighbours[y + 1][x] < 3 &&
                     numberOfWaterNeighbours[y - 1][x] < 3 &&
                     numberOfWaterNeighbours[y][x - 1] < 3) {
 
                 map[y][x] = 'w';
 
+                // update neighbours
                 numberOfWaterNeighbours[y][x - 1] = numberOfWaterNeighbours[y][x - 1] + 1;
                 numberOfWaterNeighbours[y - 1][x] = numberOfWaterNeighbours[y - 1][x] + 1;
                 numberOfWaterNeighbours[y + 1][x] = numberOfWaterNeighbours[y + 1][x] + 1;
@@ -270,12 +273,14 @@ public class Map {
 
         // if water tile is in the first row
         if (y == 0 && valid == false) {
+            // if tile will not box in green tile, change to water tile
             if (numberOfWaterNeighbours[y + 1][x] < 3 &&
                     numberOfWaterNeighbours[y][x - 1] < 3 &&
                     numberOfWaterNeighbours[y][x + 1] < 3) {
 
                 map[y][x] = 'w';
 
+                // update neighbours
                 numberOfWaterNeighbours[y][x + 1] = numberOfWaterNeighbours[y][x + 1] + 1;
                 numberOfWaterNeighbours[y][x - 1] = numberOfWaterNeighbours[y][x - 1] + 1;
                 numberOfWaterNeighbours[y + 1][x] = numberOfWaterNeighbours[y + 1][x] + 1;
@@ -289,12 +294,14 @@ public class Map {
 
         // if water tile is in the last column
         if (y == size - 1 && valid == false) {
+            // if tile will not box in green tile, change to water tile
             if (numberOfWaterNeighbours[y - 1][x] < 3 &&
                     numberOfWaterNeighbours[y][x - 1] < 3 &&
                     numberOfWaterNeighbours[y][x + 1] < 3) {
 
                 map[y][x] = 'w';
 
+                // update neighbours
                 numberOfWaterNeighbours[y][x - 1] = numberOfWaterNeighbours[y][x - 1] + 1;
                 numberOfWaterNeighbours[y][x + 1] = numberOfWaterNeighbours[y][x + 1] + 1;
                 numberOfWaterNeighbours[y - 1][x] = numberOfWaterNeighbours[y - 1][x] + 1;
@@ -316,9 +323,11 @@ public class Map {
         int x;
         int y;
 
+        // generate random x and y coordinates
         x = rand.nextInt(size - 1);
         y = rand.nextInt(size - 1);
 
+        // set the treasure coordinates to the generated coordinates
         treasureTile_x = x;
         treasureTile_y = y;
 
@@ -328,12 +337,14 @@ public class Map {
     }
 
     // getter for the treasure tile's x position
+    // returns the treasure x coordinate
     public int getTreasurex(){
 
         return treasureTile_x;
     }
 
     // getter for the treasure tile's y position
+    // returns the treasure y coordinate
     public int getTreasurey(){
 
         return treasureTile_y;
