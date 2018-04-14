@@ -3,11 +3,18 @@ package cps2002.game;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.Rule;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.ByteArrayInputStream;
+import java.lang.*;
+import java.io.InputStream;
+import java.util.Scanner;
+
 
 import static org.junit.Assert.*;
+
 
 /* this class tests the functionality of the Game class */
 
@@ -294,6 +301,8 @@ public class GameTest {
         g.tm.size = 5;
         g.numOfPlayers = 2;
         g.tm.map = g.tm.setMap();
+        g.tm.addWaterTiles();
+        g.tm.addTreasureTile();
 
         // add new player to players array
         g.players.add(player);
@@ -426,6 +435,7 @@ public class GameTest {
                 ".table{\n" +
                 "display: table;\n" +
                 "width: 100%;\n" +
+                "color: white;\n"+
                 "}\n" +
                 "\n" +
                 "/* set the display type to a table row */\n" +
@@ -562,13 +572,91 @@ public class GameTest {
             e.printStackTrace();
         }
 
-        File file = new File("htmlFiles/map_player 1.html");
+        File file = new File("HTMLFiles/map_player_1.html");
 
         // check if file is created
         assertEquals(file.exists(),true);
 
 
     }
+
+
+
+    // test user input for choose players with initial pass
+    @Test
+    public void testChoosePlayers(){
+
+
+        String numPlayers = "2";
+
+        g.choosePlayers(new Scanner(numPlayers));
+
+        assertEquals(2,g.numOfPlayers);
+
+
+    }
+
+    // test user input for choose players with initial fail
+    @Test
+    public void testChoosePlayersWithFail(){
+
+
+        String numPlayers = "-10\n5";
+
+        g.choosePlayers(new Scanner(numPlayers));
+
+        assertEquals(5,g.numOfPlayers);
+
+
+    }
+
+    // test user input for choose map size with initial pass
+    @Test
+    public void testChooseMapSize(){
+
+
+        String mapSize = "8";
+        g.tm = tm;
+        g.tm.numOfPlayers = 6;
+        g.chooseMapSize(new Scanner(mapSize));
+
+        assertEquals(8,g.tm.size);
+
+
+    }
+
+    // test user input for choose map size with initial fail
+    @Test
+    public void testChooseMapSizeWithFail(){
+
+
+        String mapSize = "-10\n5";
+        g.tm = tm;
+        g.tm.numOfPlayers = 6;
+        g.chooseMapSize(new Scanner(mapSize));
+        assertEquals(5,g.tm.size);
+
+    }
+
+
+    // test game loop
+    @Test
+    public void testGameLoop(){
+
+        g.numOfPlayers = 2;
+        g.tm = tm;
+        g.tm.size = 7;
+        g.tm.map = g.tm.setMap();
+        g.tm.addWaterTiles();
+        g.tm.addTreasureTile();
+        g.addPlayers();
+        g.players.get(0).setPosition(new Position(g.tm.getTreasurex(),g.tm.getTreasurey()+1));
+        g.players.get(1).setPosition(new Position(1,1));
+        String moves = "U\nL";
+        g.gameLoop(new Scanner(moves));
+        assertEquals(true, g.treasureFound);
+    }
+
 
     // set the objects to null
     @After

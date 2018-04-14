@@ -44,69 +44,35 @@ public class Game {
     // random function for setting the players' starting positions
     Random rand = new Random();
 
+    int mapSize = 0;
+
     // variable containing the game map
     Map tm;
+
 
 
 
     // main game loop
     public void startGame(){
 
+        // delete the html files in HTMLFiles folder
+        File dir = new File("HTMLFiles");
 
-        /* choose the number of players
-        if the number of players does not obey the constraints, output an error
-        message and ask the user to enter the number of players again
-        repeat until constraints are satisfied */
-        System.out.println("Choose the number of players");
-        String numPlayers = sc.nextLine();
+        for(File file: dir.listFiles())
+            if (!file.isDirectory() && !(file.getName().equals("Chess_pdt60.png")))
+                file.delete();
 
-        numOfPlayers = Integer.parseInt(numPlayers);
-
-
-        while (setPlayers(numOfPlayers) == false) {
-
-
-            System.out.println("ERROR:Number of Players must be between 2 and 8.");
-
-            System.out.println("Choose the number of players");
-            String newNumPlayers = sc.nextLine();
-
-            numOfPlayers = Integer.parseInt(newNumPlayers);
-        }
-
-        tm = new Map(numOfPlayers);
-
-
-        /* choose the map size
-        if the size does not obey the constraints, output an error
-        message and ask the user to enter the size again
-        repeat until constraints are satisfied */
-        System.out.println("Choose map size");
-        String mpSize = sc.nextLine();
-
-        int mapSize = Integer.parseInt(mpSize);
-
-
-        while (tm.setSize(mapSize) == false) {
-
-
-            System.out.println("ERROR:Invalid map size.");
-
-
-            System.out.println("Choose map size");
-            String newMapSize = sc.nextLine();
-
-            mapSize = Integer.parseInt(newMapSize);
-
-            }
+        choosePlayers(sc);
+        chooseMapSize(sc);
 
         // set the map size
         tm.size = mapSize;
 
         // generate the map
         tm.map = tm.setMap();
+        tm.addWaterTiles();
+        tm.addTreasureTile();
 
-        //tm.getTileType(0, 0);
 
         // set the board size
         boardSize = tm.size;
@@ -122,12 +88,74 @@ public class Game {
             revealColour(players.get(i).position.getx(),players.get(i).position.gety(),i);
         }
 
+
         // run the game loop
-        gameLoop();
+        gameLoop(sc);
 
 
 
 
+
+    }
+
+
+    /* choose the map size
+     * Parameters: scanner-> used to read user input*/
+    public void chooseMapSize(Scanner scanner){
+
+        tm = new Map(numOfPlayers);
+
+
+         /* choose the map size
+        if the size does not obey the constraints, output an error
+        message and ask the user to enter the size again
+        repeat until constraints are satisfied */
+        System.out.println("Choose map size");
+        String mpSize = scanner.nextLine();
+
+        mapSize = Integer.parseInt(mpSize);
+
+
+        while (tm.setSize(mapSize) == false) {
+
+
+            System.out.println("ERROR:Invalid map size.");
+
+
+            System.out.println("Choose map size");
+            String newMapSize = scanner.nextLine();
+
+            mapSize = Integer.parseInt(newMapSize);
+
+        }
+    }
+
+
+
+    /* choose the number of players
+    * Parameters: scanner-> used to read user input*/
+    public void choosePlayers(Scanner scanner){
+
+        /* choose the number of players
+        if the number of players does not obey the constraints, output an error
+        message and ask the user to enter the number of players again
+        repeat until constraints are satisfied */
+        System.out.println("Choose the number of players");
+        String numPlayers = scanner.nextLine();
+
+        numOfPlayers = Integer.parseInt(numPlayers);
+
+
+        while (setPlayers(numOfPlayers) == false) {
+
+
+            System.out.println("ERROR:Number of Players must be between 2 and 8.");
+
+            System.out.println("Choose the number of players");
+            String newNumPlayers = scanner.nextLine();
+
+            numOfPlayers = Integer.parseInt(newNumPlayers);
+        }
     }
 
 
@@ -146,14 +174,15 @@ public class Game {
         }
     }
 
+
     /* run the main functionality of the game.
      * generate the player HTML file
      * run the moves in the current turn
      * repeat until treasure is found */
-    public void gameLoop(){
-
+    public void gameLoop(Scanner scanner){
+        int nextPlayerIndex = -1;
         // repeat the main functionality until the treasure is found
-        while(treasureFound == false){
+        while(treasureFound == false && currentSetOfMoves.size() == 0){
 
 
             /* for loop to generate the HTML file of each player and ask the user to enter their
@@ -168,7 +197,7 @@ public class Game {
 
                 // ask the user to enter their move
                 System.out.println("Enter Move");
-                String choice = sc.nextLine();
+                String choice = scanner.nextLine();
 
                 // add the user's move to the array list containing the moves
                 currentSetOfMoves.add(choice);
@@ -187,7 +216,6 @@ public class Game {
                 revealColour(players.get(j).position.getx(), players.get(j).position.gety(), j);
 
 
-
             }
 
             // empty the moves
@@ -196,6 +224,7 @@ public class Game {
             }
 
         }
+
 
         // generate the HTML file for each player
         for(int i = 0; i < players.size(); i++) {
@@ -209,20 +238,20 @@ public class Game {
     }
 
 
-    public void printMap(){
+    /*public void printMap(){
 
-        System.out.println("Player map");
+
 
         for(int i = 0; i < tm.size; i ++){
             for(int j = 0; j < tm.size; j++){
 
-                System.out.print(players.get(0).tm.map[i][j]);
+                System.out.print(tm.map[i][j]);
             }
             System.out.println("\n");
         }
 
         System.out.println("*********************");
-    }
+    }*/
 
     /* generate a random Position
     * Returns: Position-> player's starting position*/
@@ -356,7 +385,6 @@ public class Game {
             revealColour(x,y,index);
             player.setPosition(player.startingPosition);
 
-            //revealColour(x,y,index, prevx, prevy);
         } else {
 
             // set the player's position to the new position
@@ -409,6 +437,7 @@ public class Game {
                 ".table{\n" +
                 "display: table;\n" +
                 "width: 100%;\n" +
+                "color: white;\n"+
                 "}\n\n" +
                 "/* set the display type to a table row */\n" +
                 ".tableRow {\n" +
@@ -458,12 +487,13 @@ public class Game {
         // add the rows and the different tiles based on the player's map
         String tileType = "";
         num--;
-        printMap();
+        //printMap();
         for(int i = 0; i < tm.size; i++){
 
             html = html + "<div class=\"tableRow\">\n\n";
 
 
+            // set the tile type for the html table
             for(int j = 0; j < tm.size; j++){
 
                 if(players.get(num).tm.getTileType(j,i) == 'g'){
@@ -515,14 +545,9 @@ public class Game {
         try {
             num++;
 
-            // create the directory to store the files
-            File directory = new File("htmlFiles");
-            if(!directory.exists()){
-                directory.mkdir();
-            }
 
             // create the html file
-            File file = new File("htmlFiles/map_player "+num+".html");
+            File file = new File("HTMLFiles/map_player_"+num+".html");
             file.createNewFile();;
 
             bw = new BufferedWriter(new FileWriter(file));

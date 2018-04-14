@@ -66,11 +66,65 @@ public class MapTest {
         expectedMap[4][3] = 'g';
         expectedMap[4][4] = 'g';
 
-        expectedMap[3][4] = 't';
-        expectedMap[4][1] = 'w';
+        expectedMap[3][4] = 'g';
+        expectedMap[4][1] = 'g';
 
         assertArrayEquals(expectedMap,map);
 
+    }
+
+    // test addWaterTiles()
+    @Test
+    public void testWaterTiles(){
+
+        // set the map size
+        tm.size = 5;
+
+        // generate the map
+        tm.map = tm.setMap();
+
+        // add the water tiles to the map
+        tm.addWaterTiles();
+
+        assertEquals('w', tm.map[4][1]);
+    }
+
+    // test addTreasureTile()
+    @Test
+    public void testTreasureTile(){
+
+        // set the map size
+        tm.size = 5;
+
+        // generate the map
+        tm.map = tm.setMap();
+
+        // add the water tiles to the map
+        tm.addWaterTiles();
+
+        // add the treasure tile to the map
+        tm.addTreasureTile();
+
+        boolean treasureTileFound = false;
+
+
+        // check if there exists a treasure tile in the map
+        for(int i = 0; i < tm.size;i++){
+
+            for(int j = 0;j < tm.size;j++){
+                if(tm.getTileType(j,i) == 't'){
+                    treasureTileFound = true;
+                    break;
+                }
+
+                if(treasureTileFound == true){
+                    break;
+                }
+            }
+
+        }
+
+        assertEquals(true, treasureTileFound);
     }
 
     // test that get the tile type when the tile is a treasure tile works
@@ -83,7 +137,9 @@ public class MapTest {
         // generate the map
         tm.map = tm.setMap();
 
-        char type = tm.getTileType(4,3);
+        tm.addTreasureTile();
+
+        char type = tm.getTileType(tm.getTreasurex(),tm.getTreasurey());
         assertEquals('t', type);
     }
 
@@ -96,6 +152,7 @@ public class MapTest {
 
         // generate the map
         tm.map = tm.setMap();
+        tm.addWaterTiles();
 
         char type = tm.getTileType(1,4);
         assertEquals('w', type);
@@ -207,6 +264,566 @@ public class MapTest {
         assertArrayEquals(map, tm.map);
 
     }
+
+
+    // test getx
+    @Test
+    public void testGetx(){
+
+        int expected_x = tm.getTreasurex();
+
+        assertEquals(-1,expected_x);
+    }
+
+    // test gety
+    @Test
+    public void testGety(){
+
+        int expected_y = tm.getTreasurey();
+
+        assertEquals(-1,expected_y);
+    }
+
+    // test if more than one water tile is found
+    @Test
+    public void testNumOfWaterTiles(){
+
+        // set the map size
+        tm.size = 20;
+
+        // generate the map
+        tm.map = tm.setMap();
+        tm.addWaterTiles();
+        tm.addTreasureTile();
+
+        int counter = 0;
+
+        boolean morethan2found = false;
+
+        for(int i = 0; i < tm.size;i++){
+
+            for(int j = 0;j < tm.size;j++){
+                if(tm.getTileType(j,i) == 'w'){
+                    counter++;
+                }
+
+                if(counter > 2){
+                    morethan2found = true;
+                    break;
+                }
+            }
+
+        }
+
+        assertEquals(true, morethan2found);
+
+
+    }
+
+    // test to check if valid water tile, middle section, with valid tile
+    @Test
+    public void testValidWaterTileMiddleSection(){
+
+
+        tm.size = 5;
+        tm.map = tm.setMap();
+
+        int[][] numOfBlueNeigh = new int[tm.size][tm.size];
+        numOfBlueNeigh[0][0] = 1;
+        numOfBlueNeigh[0][1] = 1;
+        numOfBlueNeigh[0][2] = 1;
+        numOfBlueNeigh[0][3] = 1;
+        numOfBlueNeigh[0][4] = 1;
+
+        numOfBlueNeigh[1][0] = 1;
+        numOfBlueNeigh[1][1] = 1;
+        numOfBlueNeigh[1][2] = 1;
+        numOfBlueNeigh[1][3] = 1;
+        numOfBlueNeigh[1][4] = 1;
+
+        numOfBlueNeigh[2][0] = 1;
+        numOfBlueNeigh[2][1] = 1;
+        numOfBlueNeigh[2][2] = 1;
+        numOfBlueNeigh[2][3] = 1;
+        numOfBlueNeigh[2][4] = 1;
+
+        numOfBlueNeigh[3][0] = 1;
+        numOfBlueNeigh[3][1] = 1;
+        numOfBlueNeigh[3][2] = 1;
+        numOfBlueNeigh[3][3] = 1;
+        numOfBlueNeigh[3][4] = 1;
+
+        numOfBlueNeigh[4][0] = 1;
+        numOfBlueNeigh[4][1] = 1;
+        numOfBlueNeigh[4][2] = 1;
+        numOfBlueNeigh[4][3] = 1;
+        numOfBlueNeigh[4][4] = 1;
+
+        tm.numberOfWaterNeighbours = numOfBlueNeigh;
+
+        assertEquals(true, tm.checkIfValidWaterPosition(3,2));
+
+
+    }
+
+    // test to check if valid water tile, middle section, with invalid tile
+    @Test
+    public void testInvalidTileInMiddle(){
+
+        tm.size = 5;
+        tm.map = tm.setMap();
+
+        int[][] numOfBlueNeigh = new int[tm.size][tm.size];
+        numOfBlueNeigh[0][0] = 1;
+        numOfBlueNeigh[0][1] = 1;
+        numOfBlueNeigh[0][2] = 1;
+        numOfBlueNeigh[0][3] = 1;
+        numOfBlueNeigh[0][4] = 1;
+
+        numOfBlueNeigh[1][0] = 1;
+        numOfBlueNeigh[1][1] = 1;
+        numOfBlueNeigh[1][2] = 1;
+        numOfBlueNeigh[1][3] = 1;
+        numOfBlueNeigh[1][4] = 1;
+
+        numOfBlueNeigh[2][0] = 1;
+        numOfBlueNeigh[2][1] = 1;
+        numOfBlueNeigh[2][2] = 1;
+        numOfBlueNeigh[2][3] = 1;
+        numOfBlueNeigh[2][4] = 1;
+
+        numOfBlueNeigh[3][0] = 1;
+        numOfBlueNeigh[3][1] = 1;
+        numOfBlueNeigh[3][2] = 1;
+        numOfBlueNeigh[3][3] = 1;
+        numOfBlueNeigh[3][4] = 1;
+
+        numOfBlueNeigh[4][0] = 1;
+        numOfBlueNeigh[4][1] = 1;
+        numOfBlueNeigh[4][2] = 1;
+        numOfBlueNeigh[4][3] = 1;
+        numOfBlueNeigh[4][4] = 1;
+
+        tm.numberOfWaterNeighbours = numOfBlueNeigh;
+
+        tm.numberOfWaterNeighbours[1][2] = 3;
+
+
+        assertEquals(false, tm.checkIfValidWaterPosition(2,2));
+    }
+
+
+    // test to check if valid water tile, corners
+    @Test
+    public void checkValidWaterTileCorners(){
+
+        tm.size = 5;
+        tm.map = tm.setMap();
+
+        int[][] numOfBlueNeigh = new int[tm.size][tm.size];
+        numOfBlueNeigh[0][0] = 1;
+        numOfBlueNeigh[0][1] = 1;
+        numOfBlueNeigh[0][2] = 1;
+        numOfBlueNeigh[0][3] = 1;
+        numOfBlueNeigh[0][4] = 1;
+
+        numOfBlueNeigh[1][0] = 1;
+        numOfBlueNeigh[1][1] = 1;
+        numOfBlueNeigh[1][2] = 1;
+        numOfBlueNeigh[1][3] = 1;
+        numOfBlueNeigh[1][4] = 1;
+
+        numOfBlueNeigh[2][0] = 1;
+        numOfBlueNeigh[2][1] = 1;
+        numOfBlueNeigh[2][2] = 1;
+        numOfBlueNeigh[2][3] = 1;
+        numOfBlueNeigh[2][4] = 1;
+
+        numOfBlueNeigh[3][0] = 1;
+        numOfBlueNeigh[3][1] = 1;
+        numOfBlueNeigh[3][2] = 1;
+        numOfBlueNeigh[3][3] = 1;
+        numOfBlueNeigh[3][4] = 1;
+
+        numOfBlueNeigh[4][0] = 1;
+        numOfBlueNeigh[4][1] = 1;
+        numOfBlueNeigh[4][2] = 1;
+        numOfBlueNeigh[4][3] = 1;
+        numOfBlueNeigh[4][4] = 1;
+
+        tm.numberOfWaterNeighbours = numOfBlueNeigh;
+
+        assertEquals(true, tm.checkIfValidWaterPosition(0,0));
+
+    }
+
+    // test to check if valid water tile, top row, valid
+    @Test
+    public void testCheckIfValidWaterTileTopRow(){
+        tm.size = 5;
+        tm.map = tm.setMap();
+
+        int[][] numOfBlueNeigh = new int[tm.size][tm.size];
+        numOfBlueNeigh[0][0] = 1;
+        numOfBlueNeigh[0][1] = 1;
+        numOfBlueNeigh[0][2] = 1;
+        numOfBlueNeigh[0][3] = 1;
+        numOfBlueNeigh[0][4] = 1;
+
+        numOfBlueNeigh[1][0] = 1;
+        numOfBlueNeigh[1][1] = 1;
+        numOfBlueNeigh[1][2] = 1;
+        numOfBlueNeigh[1][3] = 1;
+        numOfBlueNeigh[1][4] = 1;
+
+        numOfBlueNeigh[2][0] = 1;
+        numOfBlueNeigh[2][1] = 1;
+        numOfBlueNeigh[2][2] = 1;
+        numOfBlueNeigh[2][3] = 1;
+        numOfBlueNeigh[2][4] = 1;
+
+        numOfBlueNeigh[3][0] = 1;
+        numOfBlueNeigh[3][1] = 1;
+        numOfBlueNeigh[3][2] = 1;
+        numOfBlueNeigh[3][3] = 1;
+        numOfBlueNeigh[3][4] = 1;
+
+        numOfBlueNeigh[4][0] = 1;
+        numOfBlueNeigh[4][1] = 1;
+        numOfBlueNeigh[4][2] = 1;
+        numOfBlueNeigh[4][3] = 1;
+        numOfBlueNeigh[4][4] = 1;
+
+        tm.numberOfWaterNeighbours = numOfBlueNeigh;
+
+        tm.numberOfWaterNeighbours[1][2] = 2;
+
+        assertEquals(true, tm.checkIfValidWaterPosition(2,0));
+
+    }
+
+    // test to check if valid water tile, top row, false
+    @Test
+    public void testCheckValidWaterTileTopRow(){
+        tm.size = 5;
+        tm.map = tm.setMap();
+
+        int[][] numOfBlueNeigh = new int[tm.size][tm.size];
+        numOfBlueNeigh[0][0] = 1;
+        numOfBlueNeigh[0][1] = 1;
+        numOfBlueNeigh[0][2] = 1;
+        numOfBlueNeigh[0][3] = 1;
+        numOfBlueNeigh[0][4] = 1;
+
+        numOfBlueNeigh[1][0] = 1;
+        numOfBlueNeigh[1][1] = 1;
+        numOfBlueNeigh[1][2] = 1;
+        numOfBlueNeigh[1][3] = 1;
+        numOfBlueNeigh[1][4] = 1;
+
+        numOfBlueNeigh[2][0] = 1;
+        numOfBlueNeigh[2][1] = 1;
+        numOfBlueNeigh[2][2] = 1;
+        numOfBlueNeigh[2][3] = 1;
+        numOfBlueNeigh[2][4] = 1;
+
+        numOfBlueNeigh[3][0] = 1;
+        numOfBlueNeigh[3][1] = 1;
+        numOfBlueNeigh[3][2] = 1;
+        numOfBlueNeigh[3][3] = 1;
+        numOfBlueNeigh[3][4] = 1;
+
+        numOfBlueNeigh[4][0] = 1;
+        numOfBlueNeigh[4][1] = 1;
+        numOfBlueNeigh[4][2] = 1;
+        numOfBlueNeigh[4][3] = 1;
+        numOfBlueNeigh[4][4] = 1;
+
+        tm.numberOfWaterNeighbours = numOfBlueNeigh;
+
+        tm.numberOfWaterNeighbours[1][2] = 3;
+
+        assertEquals(false, tm.checkIfValidWaterPosition(2,0));
+
+    }
+
+
+    // test to check if valid water tile, bottom row, valid
+    @Test
+    public void testCheckIfValidWaterTileBottomRow(){
+        tm.size = 5;
+        tm.map = tm.setMap();
+
+        int[][] numOfBlueNeigh = new int[tm.size][tm.size];
+        numOfBlueNeigh[0][0] = 1;
+        numOfBlueNeigh[0][1] = 1;
+        numOfBlueNeigh[0][2] = 1;
+        numOfBlueNeigh[0][3] = 1;
+        numOfBlueNeigh[0][4] = 1;
+
+        numOfBlueNeigh[1][0] = 1;
+        numOfBlueNeigh[1][1] = 1;
+        numOfBlueNeigh[1][2] = 1;
+        numOfBlueNeigh[1][3] = 1;
+        numOfBlueNeigh[1][4] = 1;
+
+        numOfBlueNeigh[2][0] = 1;
+        numOfBlueNeigh[2][1] = 1;
+        numOfBlueNeigh[2][2] = 1;
+        numOfBlueNeigh[2][3] = 1;
+        numOfBlueNeigh[2][4] = 1;
+
+        numOfBlueNeigh[3][0] = 1;
+        numOfBlueNeigh[3][1] = 1;
+        numOfBlueNeigh[3][2] = 1;
+        numOfBlueNeigh[3][3] = 1;
+        numOfBlueNeigh[3][4] = 1;
+
+        numOfBlueNeigh[4][0] = 1;
+        numOfBlueNeigh[4][1] = 1;
+        numOfBlueNeigh[4][2] = 1;
+        numOfBlueNeigh[4][3] = 1;
+        numOfBlueNeigh[4][4] = 1;
+
+        tm.numberOfWaterNeighbours = numOfBlueNeigh;
+
+        tm.numberOfWaterNeighbours[3][2] = 2;
+
+        assertEquals(true, tm.checkIfValidWaterPosition(2,4));
+    }
+
+    // test to check if valid water tile, bottom row, false
+    @Test
+    public void testCheckValidWaterTileBottomRow(){
+        tm.size = 5;
+        tm.map = tm.setMap();
+
+        int[][] numOfBlueNeigh = new int[tm.size][tm.size];
+        numOfBlueNeigh[0][0] = 1;
+        numOfBlueNeigh[0][1] = 1;
+        numOfBlueNeigh[0][2] = 1;
+        numOfBlueNeigh[0][3] = 1;
+        numOfBlueNeigh[0][4] = 1;
+
+        numOfBlueNeigh[1][0] = 1;
+        numOfBlueNeigh[1][1] = 1;
+        numOfBlueNeigh[1][2] = 1;
+        numOfBlueNeigh[1][3] = 1;
+        numOfBlueNeigh[1][4] = 1;
+
+        numOfBlueNeigh[2][0] = 1;
+        numOfBlueNeigh[2][1] = 1;
+        numOfBlueNeigh[2][2] = 1;
+        numOfBlueNeigh[2][3] = 1;
+        numOfBlueNeigh[2][4] = 1;
+
+        numOfBlueNeigh[3][0] = 1;
+        numOfBlueNeigh[3][1] = 1;
+        numOfBlueNeigh[3][2] = 1;
+        numOfBlueNeigh[3][3] = 1;
+        numOfBlueNeigh[3][4] = 1;
+
+        numOfBlueNeigh[4][0] = 1;
+        numOfBlueNeigh[4][1] = 1;
+        numOfBlueNeigh[4][2] = 1;
+        numOfBlueNeigh[4][3] = 1;
+        numOfBlueNeigh[4][4] = 1;
+
+        tm.numberOfWaterNeighbours = numOfBlueNeigh;
+
+        tm.numberOfWaterNeighbours[3][2] = 3;
+
+        assertEquals(false, tm.checkIfValidWaterPosition(2,4));
+
+    }
+
+    // test to check if valid water tile, first column, valid
+    @Test
+    public void testIfValidWaterTileFirstColumn(){
+
+        tm.size = 5;
+        tm.map = tm.setMap();
+
+        int[][] numOfBlueNeigh = new int[tm.size][tm.size];
+        numOfBlueNeigh[0][0] = 1;
+        numOfBlueNeigh[0][1] = 1;
+        numOfBlueNeigh[0][2] = 1;
+        numOfBlueNeigh[0][3] = 1;
+        numOfBlueNeigh[0][4] = 1;
+
+        numOfBlueNeigh[1][0] = 1;
+        numOfBlueNeigh[1][1] = 1;
+        numOfBlueNeigh[1][2] = 1;
+        numOfBlueNeigh[1][3] = 1;
+        numOfBlueNeigh[1][4] = 1;
+
+        numOfBlueNeigh[2][0] = 1;
+        numOfBlueNeigh[2][1] = 1;
+        numOfBlueNeigh[2][2] = 1;
+        numOfBlueNeigh[2][3] = 1;
+        numOfBlueNeigh[2][4] = 1;
+
+        numOfBlueNeigh[3][0] = 1;
+        numOfBlueNeigh[3][1] = 1;
+        numOfBlueNeigh[3][2] = 1;
+        numOfBlueNeigh[3][3] = 1;
+        numOfBlueNeigh[3][4] = 1;
+
+        numOfBlueNeigh[4][0] = 1;
+        numOfBlueNeigh[4][1] = 1;
+        numOfBlueNeigh[4][2] = 1;
+        numOfBlueNeigh[4][3] = 1;
+        numOfBlueNeigh[4][4] = 1;
+
+        tm.numberOfWaterNeighbours = numOfBlueNeigh;
+
+        assertEquals(true, tm.checkIfValidWaterPosition(0,2));
+
+    }
+
+
+    // test to check if valid water tile, first column, false
+    @Test
+    public void testIfInvalidWaterTileFirstColumn(){
+
+        tm.size = 5;
+        tm.map = tm.setMap();
+
+        int[][] numOfBlueNeigh = new int[tm.size][tm.size];
+        numOfBlueNeigh[0][0] = 1;
+        numOfBlueNeigh[0][1] = 1;
+        numOfBlueNeigh[0][2] = 1;
+        numOfBlueNeigh[0][3] = 1;
+        numOfBlueNeigh[0][4] = 1;
+
+        numOfBlueNeigh[1][0] = 1;
+        numOfBlueNeigh[1][1] = 1;
+        numOfBlueNeigh[1][2] = 1;
+        numOfBlueNeigh[1][3] = 1;
+        numOfBlueNeigh[1][4] = 1;
+
+        numOfBlueNeigh[2][0] = 1;
+        numOfBlueNeigh[2][1] = 1;
+        numOfBlueNeigh[2][2] = 1;
+        numOfBlueNeigh[2][3] = 1;
+        numOfBlueNeigh[2][4] = 1;
+
+        numOfBlueNeigh[3][0] = 1;
+        numOfBlueNeigh[3][1] = 1;
+        numOfBlueNeigh[3][2] = 1;
+        numOfBlueNeigh[3][3] = 1;
+        numOfBlueNeigh[3][4] = 1;
+
+        numOfBlueNeigh[4][0] = 1;
+        numOfBlueNeigh[4][1] = 1;
+        numOfBlueNeigh[4][2] = 1;
+        numOfBlueNeigh[4][3] = 1;
+        numOfBlueNeigh[4][4] = 1;
+
+        tm.numberOfWaterNeighbours = numOfBlueNeigh;
+
+        tm.numberOfWaterNeighbours[2][1] = 3;
+
+        assertEquals(false, tm.checkIfValidWaterPosition(0,2));
+
+    }
+
+
+
+
+    // test to check if valid water tile, last column, valid
+    @Test
+    public void testIfValidWaterTileLastColumn(){
+
+        tm.size = 5;
+        tm.map = tm.setMap();
+
+        int[][] numOfBlueNeigh = new int[tm.size][tm.size];
+        numOfBlueNeigh[0][0] = 1;
+        numOfBlueNeigh[0][1] = 1;
+        numOfBlueNeigh[0][2] = 1;
+        numOfBlueNeigh[0][3] = 1;
+        numOfBlueNeigh[0][4] = 1;
+
+        numOfBlueNeigh[1][0] = 1;
+        numOfBlueNeigh[1][1] = 1;
+        numOfBlueNeigh[1][2] = 1;
+        numOfBlueNeigh[1][3] = 1;
+        numOfBlueNeigh[1][4] = 1;
+
+        numOfBlueNeigh[2][0] = 1;
+        numOfBlueNeigh[2][1] = 1;
+        numOfBlueNeigh[2][2] = 1;
+        numOfBlueNeigh[2][3] = 1;
+        numOfBlueNeigh[2][4] = 1;
+
+        numOfBlueNeigh[3][0] = 1;
+        numOfBlueNeigh[3][1] = 1;
+        numOfBlueNeigh[3][2] = 1;
+        numOfBlueNeigh[3][3] = 1;
+        numOfBlueNeigh[3][4] = 1;
+
+        numOfBlueNeigh[4][0] = 1;
+        numOfBlueNeigh[4][1] = 1;
+        numOfBlueNeigh[4][2] = 1;
+        numOfBlueNeigh[4][3] = 1;
+        numOfBlueNeigh[4][4] = 1;
+
+        tm.numberOfWaterNeighbours = numOfBlueNeigh;
+
+        assertEquals(true, tm.checkIfValidWaterPosition(4,2));
+
+    }
+
+
+    // test to check if valid water tile, last column, false
+    @Test
+    public void testIfInvalidWaterTileLastColumn(){
+
+        tm.size = 5;
+        tm.map = tm.setMap();
+
+        int[][] numOfBlueNeigh = new int[tm.size][tm.size];
+        numOfBlueNeigh[0][0] = 1;
+        numOfBlueNeigh[0][1] = 1;
+        numOfBlueNeigh[0][2] = 1;
+        numOfBlueNeigh[0][3] = 1;
+        numOfBlueNeigh[0][4] = 1;
+
+        numOfBlueNeigh[1][0] = 1;
+        numOfBlueNeigh[1][1] = 1;
+        numOfBlueNeigh[1][2] = 1;
+        numOfBlueNeigh[1][3] = 1;
+        numOfBlueNeigh[1][4] = 1;
+
+        numOfBlueNeigh[2][0] = 1;
+        numOfBlueNeigh[2][1] = 1;
+        numOfBlueNeigh[2][2] = 1;
+        numOfBlueNeigh[2][3] = 1;
+        numOfBlueNeigh[2][4] = 1;
+
+        numOfBlueNeigh[3][0] = 1;
+        numOfBlueNeigh[3][1] = 1;
+        numOfBlueNeigh[3][2] = 1;
+        numOfBlueNeigh[3][3] = 1;
+        numOfBlueNeigh[3][4] = 1;
+
+        numOfBlueNeigh[4][0] = 1;
+        numOfBlueNeigh[4][1] = 1;
+        numOfBlueNeigh[4][2] = 1;
+        numOfBlueNeigh[4][3] = 1;
+        numOfBlueNeigh[4][4] = 1;
+
+        tm.numberOfWaterNeighbours = numOfBlueNeigh;
+
+        tm.numberOfWaterNeighbours[2][3] = 3;
+
+        assertEquals(false, tm.checkIfValidWaterPosition(4,2));
+
+    }
+
+
+
 
     // set the maps to null
     @After

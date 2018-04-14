@@ -1,5 +1,9 @@
 package cps2002.game;
 
+import java.lang.*;
+import java.util.Random;
+
+
 public class Map {
 
     // constraints for map size
@@ -16,6 +20,15 @@ public class Map {
 
     // number of players in the game
     int numOfPlayers;
+
+    // used to generate random map coordinates
+    Random rand = new Random();
+
+    private int treasureTile_x = -1;
+    private int treasureTile_y = -1;
+
+    int[][] numberOfWaterNeighbours;
+
 
 
     /* Map constructor
@@ -94,14 +107,236 @@ public class Map {
             }
         }
 
-        // set the treasure tile
-        tm[3][4] = 't';
-
-        // set the water tile
-        tm[4][1] = 'w';
 
         return tm;
 
+    }
+
+    // add water tiles to the map
+    public void addWaterTiles(){
+
+        numberOfWaterNeighbours = new int[size][size];
+
+        for(int i = 0; i < size; i++){
+            for(int j = 0; j < size; j++){
+                numberOfWaterNeighbours[i][j] = 0;
+            }
+        }
+
+        // around 15% of the map will be filled with water tiles
+        double percentage = size*0.15;
+        int numToGenerate = (int)Math.floor(percentage);
+
+        int x;
+        int y;
+
+        x = 1;
+        y = 4;
+
+        map[y][x] = 'w';
+
+        // increase number of neighbours in tile below
+        if(y != size-1){
+            numberOfWaterNeighbours[y+1][x] = numberOfWaterNeighbours[y+1][x]+1;
+        }
+
+        // increase number of neighbours in tile above
+        if(y != 0){
+            numberOfWaterNeighbours[y-1][x] = numberOfWaterNeighbours[y-1][x]+1;
+
+        }
+
+        // increase number of neighbours in tile to the right
+        if(x != size-1){
+            numberOfWaterNeighbours[y][x+1] = numberOfWaterNeighbours[y][x+1]+1;
+
+        }
+
+        // increase number of neighbours in tile to the left
+        if(x != 0){
+            numberOfWaterNeighbours[y][x-1] = numberOfWaterNeighbours[y][x-1]+1;
+
+        }
+
+        // fill the map with water tiles
+        for(int i = 1; i < numToGenerate;i++){
+
+            x = rand.nextInt(size - 1);
+            y = rand.nextInt(size - 1);
+
+            // make sure x and y are in required range
+            while(x >=size && y >=size) {
+                x = rand.nextInt(size - 1);
+                y = rand.nextInt(size - 1);
+            }
+
+            if(checkIfValidWaterPosition(x,y) == false){
+                i--;
+            }
+
+        }
+
+    }
+
+   /* public void printMap(){
+
+
+
+        for(int i = 0; i < size; i ++){
+            for(int j = 0; j < size; j++){
+
+                System.out.println("("+i+","+j+")");
+                System.out.print(numberOfWaterNeighbours[i][j]);
+            }
+            System.out.println("\n");
+        }
+
+        System.out.println("*********************");
+    }*/
+
+    public boolean checkIfValidWaterPosition(int x, int y) {
+
+        boolean valid = false;
+
+        // check if the new water tile does not create a box around a green tile, when the blue tile is not in the border rows
+        if (y < size - 1 && y> 0 && x < size - 1 && x > 0) {
+            if (numberOfWaterNeighbours[y + 1][x] < 3 &&
+                    numberOfWaterNeighbours[y - 1][x] < 3 &&
+                    numberOfWaterNeighbours[y][x + 1] < 3 &&
+                    numberOfWaterNeighbours[y][x - 1] < 3) {
+
+                map[y][x] = 'w';
+
+                numberOfWaterNeighbours[y][x - 1] = numberOfWaterNeighbours[y][x - 1] + 1;
+                numberOfWaterNeighbours[y][x + 1] = numberOfWaterNeighbours[y][x + 1] + 1;
+                numberOfWaterNeighbours[y - 1][x] = numberOfWaterNeighbours[y - 1][x] + 1;
+                numberOfWaterNeighbours[y + 1][x] = numberOfWaterNeighbours[y + 1][x] + 1;
+
+                valid = true;
+
+            } else {
+                valid =  false;
+            }
+
+
+        }
+
+        // if water tile is in a corner, change tile to blue
+        if (x == 0 && y == 0 || y == 0 && x == size - 1 || y == size - 1 && x == 0 || y == size - 1 && x == size - 1) {
+            map[y][x] = 'w';
+            valid = true;
+        }
+
+        // if water tile is in the first column
+        if (x == 0 && valid == false) {
+            // if tile will not box in green tile, change to water tile
+            if (numberOfWaterNeighbours[y + 1][x] < 3 &&
+                    numberOfWaterNeighbours[y - 1][x] < 3 &&
+                    numberOfWaterNeighbours[y][x + 1] < 3) {
+
+                map[y][x] = 'w';
+
+                numberOfWaterNeighbours[y][x + 1] = numberOfWaterNeighbours[y][x + 1] + 1;
+                numberOfWaterNeighbours[y - 1][x] = numberOfWaterNeighbours[y - 1][x] + 1;
+                numberOfWaterNeighbours[y + 1][x] = numberOfWaterNeighbours[y + 1][x] + 1;
+
+                valid = true;
+
+            } else {
+                valid = false;
+            }
+
+        }
+
+        // if water tile is in the last column
+        if (x == size - 1 && valid == false) {
+            if (numberOfWaterNeighbours[y + 1][x] < 3 &&
+                    numberOfWaterNeighbours[y - 1][x] < 3 &&
+                    numberOfWaterNeighbours[y][x - 1] < 3) {
+
+                map[y][x] = 'w';
+
+                numberOfWaterNeighbours[y][x - 1] = numberOfWaterNeighbours[y][x - 1] + 1;
+                numberOfWaterNeighbours[y - 1][x] = numberOfWaterNeighbours[y - 1][x] + 1;
+                numberOfWaterNeighbours[y + 1][x] = numberOfWaterNeighbours[y + 1][x] + 1;
+
+                valid = true;
+
+            } else {
+                valid = false;
+            }
+        }
+
+
+        // if water tile is in the first row
+        if (y == 0 && valid == false) {
+            if (numberOfWaterNeighbours[y + 1][x] < 3 &&
+                    numberOfWaterNeighbours[y][x - 1] < 3 &&
+                    numberOfWaterNeighbours[y][x + 1] < 3) {
+
+                map[y][x] = 'w';
+
+                numberOfWaterNeighbours[y][x + 1] = numberOfWaterNeighbours[y][x + 1] + 1;
+                numberOfWaterNeighbours[y][x - 1] = numberOfWaterNeighbours[y][x - 1] + 1;
+                numberOfWaterNeighbours[y + 1][x] = numberOfWaterNeighbours[y + 1][x] + 1;
+
+                valid = true;
+
+            } else {
+                valid = false;
+            }
+        }
+
+        // if water tile is in the last column
+        if (y == size - 1 && valid == false) {
+            if (numberOfWaterNeighbours[y - 1][x] < 3 &&
+                    numberOfWaterNeighbours[y][x - 1] < 3 &&
+                    numberOfWaterNeighbours[y][x + 1] < 3) {
+
+                map[y][x] = 'w';
+
+                numberOfWaterNeighbours[y][x - 1] = numberOfWaterNeighbours[y][x - 1] + 1;
+                numberOfWaterNeighbours[y][x + 1] = numberOfWaterNeighbours[y][x + 1] + 1;
+                numberOfWaterNeighbours[y - 1][x] = numberOfWaterNeighbours[y - 1][x] + 1;
+
+                valid =  true;
+
+            } else {
+                valid =  false;
+            }
+        }
+
+        return valid;
+    }
+
+    // add a treasure tile to the map
+    public void addTreasureTile(){
+
+
+        int x;
+        int y;
+
+        x = rand.nextInt(size - 1);
+        y = rand.nextInt(size - 1);
+
+        treasureTile_x = x;
+        treasureTile_y = y;
+
+        map[y][x] = 't';
+
+
+    }
+
+    // getter for the treasure tile's x position
+    public int getTreasurex(){
+
+        return treasureTile_x;
+    }
+
+    // getter for the treasure tile's y position
+    public int getTreasurey(){
+
+        return treasureTile_y;
     }
 
     /* get the tile type
