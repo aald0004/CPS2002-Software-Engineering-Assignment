@@ -2,35 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55b902c6-5835-408b-937a-db486ed45dd3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emma/_files/0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/emma/_files/1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/emma/_files/2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/emma/_files/3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/emma/_files/4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/emma/_files/5.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/emma/_files/6.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/emma/_files/7.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/emma/coverage.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/emma/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cps2002/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cps2002/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/assignment-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/assignment-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cps2002/game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cps2002/game/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/coverage-0.ec" beforeDir="false" afterPath="$PROJECT_DIR$/target/coverage-0.ec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/coverage.em" beforeDir="false" afterPath="$PROJECT_DIR$/target/coverage.em" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-classes/emma/classes/cps2002/game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-classes/emma/classes/cps2002/game/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-cps2002.game.GameTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-cps2002.game.GameTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-cps2002.game.MapTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-cps2002.game.MapTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-cps2002.game.PlayerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-cps2002.game.PlayerTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-cps2002.task1.CalculatorTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-cps2002.task1.CalculatorTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-cps2002.task1.MessageTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-cps2002.task1.MessageTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cps2002.game.GameTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cps2002.game.GameTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cps2002.game.MapTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cps2002.game.MapTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cps2002.game.PlayerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cps2002.game.PlayerTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cps2002.game.PositionTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cps2002.game.PositionTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cps2002.task1.CalculatorTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cps2002.task1.CalculatorTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cps2002.task1.MessageTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cps2002.task1.MessageTest.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -96,34 +68,13 @@
       <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/cps2002/game/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1170">
-              <caret line="216" column="23" selection-start-line="216" selection-start-column="23" selection-end-line="216" selection-end-column="23" />
+            <state relative-caret-position="234">
+              <caret line="63" column="8" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#737#745#0" expanded="true" />
                 <element signature="e#946#954#0" expanded="true" />
                 <element signature="e#1406#1415#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="map_player_1.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HTMLFiles/map_player_1.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-234">
-              <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="map_player_2.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HTMLFiles/map_player_2.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -376,11 +327,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/HTMLFiles" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -395,7 +346,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Game">
+  <component name="RunManager" selected="JUnit.GameTest.testWelcomeMessage">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HEIGHT" value="0" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
@@ -415,7 +366,7 @@
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="GameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GameTest.testWelcomeMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CPS2002assignment" />
       <extension name="coverage">
         <pattern>
@@ -427,8 +378,8 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="cps2002.game" />
       <option name="MAIN_CLASS_NAME" value="cps2002.game.GameTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="testWelcomeMessage" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -560,18 +511,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.MapTest" />
-      <item itemvalue="JUnit.GameTest" />
       <item itemvalue="JUnit.PlayerTest" />
       <item itemvalue="JUnit.PositionTest" />
       <item itemvalue="Application.Game" />
+      <item itemvalue="JUnit.GameTest.testWelcomeMessage" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GameTest.testWelcomeMessage" />
         <item itemvalue="Application.Game" />
         <item itemvalue="JUnit.MapTest" />
         <item itemvalue="JUnit.PositionTest" />
         <item itemvalue="JUnit.PlayerTest" />
-        <item itemvalue="JUnit.GameTest" />
       </list>
     </recent_temporary>
   </component>
@@ -601,7 +552,7 @@
       <workItem from="1523732877842" duration="1299000" />
       <workItem from="1523741495982" duration="3545000" />
       <workItem from="1523781188880" duration="406000" />
-      <workItem from="1523801500697" duration="1373000" />
+      <workItem from="1523801500697" duration="1797000" />
     </task>
     <servers />
   </component>
@@ -638,11 +589,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106893000" />
+    <option name="totallyTimeSpent" value="107317000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1377" height="912" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -654,11 +604,11 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.28848642" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.21086675" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28848642" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.21086675" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22648609" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22648609" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -972,8 +922,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cps2002/game/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1170">
-          <caret line="216" column="23" selection-start-line="216" selection-start-column="23" selection-end-line="216" selection-end-column="23" />
+        <state relative-caret-position="234">
+          <caret line="63" column="8" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#737#745#0" expanded="true" />

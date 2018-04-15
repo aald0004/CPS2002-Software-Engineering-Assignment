@@ -638,6 +638,19 @@ public class GameTest {
         assertEquals(true, g.treasureFound);
     }
 
+    // test the welcome message
+    @Test
+    public void testWelcomeMessage(){
+
+        String message = g.welcomeMessage();
+
+        String expectedMessage = "The goal of the game is to find the treasure before your opponents do.\n" +
+                "You will need to enter a move: u for up, d for down, l for left and r for right.\n" +
+                "Your map can be found in the directory: HTMLFiles\n";
+
+        assertEquals(expectedMessage,message);
+    }
+
 
     // set the objects to null
     @After

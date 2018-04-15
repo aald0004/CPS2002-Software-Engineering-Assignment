@@ -58,9 +58,9 @@ public class Game {
     // set up initial settings
     public void startGame(){
 
-        System.out.println("The goal of the game is to find the treasure before your opponents do.");
-        System.out.println("You will need to enter a move: u for up, d for down, l for left and r for right.");
-        System.out.println("Your map can be found in the directory: HTMLFiles\n");
+
+        // print welcome message and instructions
+        System.out.println(welcomeMessage());
 
         // delete the html files in HTMLFiles folder
         File dir = new File("HTMLFiles");
@@ -104,6 +104,17 @@ public class Game {
 
 
 
+    }
+
+    // retrieve the welcome message and instructions
+    // Returns: String-> the message
+    public String welcomeMessage(){
+
+        String message = "The goal of the game is to find the treasure before your opponents do.\n" +
+                "You will need to enter a move: u for up, d for down, l for left and r for right.\n" +
+                "Your map can be found in the directory: HTMLFiles\n";
+
+        return message;
     }
 
 
