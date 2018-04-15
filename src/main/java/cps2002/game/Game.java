@@ -16,7 +16,7 @@ the HTML files, and sets up the initial settings.
 public class Game {
 
     // used to read user input
-    Scanner sc = new Scanner(System.in);
+   // Scanner sc = new Scanner(System.in);
 
     // set the constraints for choosing the number of players
     public static final int MAX_PLAYERS = 8;
@@ -56,7 +56,7 @@ public class Game {
 
 
     // set up initial settings
-    public void startGame(){
+    public void startGame(Scanner sc){
 
 
         // print welcome message and instructions
@@ -670,8 +670,11 @@ public class Game {
         // create a game instance
         Game game = new Game();
 
+        // scanner for user input
+        Scanner sc = new Scanner(System.in);
+
         // start the game
-        game.startGame();
+        game.startGame(sc);
     }
 
 }

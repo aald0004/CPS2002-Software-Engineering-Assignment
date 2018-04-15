@@ -651,6 +651,21 @@ public class GameTest {
         assertEquals(expectedMessage,message);
     }
 
+    // test start game
+    @Test
+    public void testStartGame(){
+
+
+        String inputs = "2\n5\nU\nU\nu\nu\nu\nu\nu\nu\nl\nl\nl\nl\nl\nl\nl\nl" +
+                "d\nd\nd\nd\nd\nd\nd\nd\nr\nr\nu\nu\nu\nu\nu\nu\nu\nu\nr\nr\n" +
+                "d\nd\nd\nd\nd\nd\nd\nd\nr\nr\nu\nu\nu\nu\nu\nu\nu\nu\nr\nr\n" +
+                "d\nd\nd\nd\nd\nd\nd\nd";
+
+        g.startGame(new Scanner(inputs));
+        assertEquals(true, g.treasureFound);
+
+    }
+
 
     // set the objects to null
     @After
