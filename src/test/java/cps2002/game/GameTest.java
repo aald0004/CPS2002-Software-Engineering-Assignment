@@ -470,7 +470,7 @@ public class GameTest {
                 "<div class=\"tableBody\">\n" +
                 "<div class=\"tableRow\">\n" +
                 "\n" +
-                "<div class=\"grassTile\" style = \"background-position:center;background-image:url('./Chess_pdt60.png')\"></div>\n" +
+                "<div class=\"grassTile\" style = \"background-position:center;background-image:url('./player.png')\"></div>\n" +
                 "<div class=\"greyTile\">&nbsp;</div>\n" +
                 "<div class=\"greyTile\">&nbsp;</div>\n" +
                 "<div class=\"greyTile\">&nbsp;</div>\n" +
@@ -656,10 +656,14 @@ public class GameTest {
     public void testStartGame(){
 
 
+        // input to set number of players, map size and to go through all possible tiles
         String inputs = "2\n5\nU\nU\nu\nu\nu\nu\nu\nu\nl\nl\nl\nl\nl\nl\nl\nl" +
                 "d\nd\nd\nd\nd\nd\nd\nd\nr\nr\nu\nu\nu\nu\nu\nu\nu\nu\nr\nr\n" +
                 "d\nd\nd\nd\nd\nd\nd\nd\nr\nr\nu\nu\nu\nu\nu\nu\nu\nu\nr\nr\n" +
-                "d\nd\nd\nd\nd\nd\nd\nd";
+                "d\nd\nd\nd\nd\nd\nd\nd\nu\nu\nu\nu\nu\nu\nu\nu\nr\nr\nr\nr\nr\nr\nr\nr" +
+                "d\nd\nd\nd\nd\nd\nd\nl\nl\nu\nu\nu\nu\nu\nu\nu\nu\nl\nl\n" +
+                "d\nd\nd\nd\nd\nd\nd\nl\nl\nu\nu\nu\nu\nu\nu\nu\nu\nl\nl\n" +
+                "d\nd\nd\nd\nd\nd\nd";
 
         g.startGame(new Scanner(inputs));
         assertEquals(true, g.treasureFound);

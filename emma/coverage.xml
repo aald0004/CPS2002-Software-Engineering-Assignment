@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!-- EMMA v2.1.5320 (stable) report, generated Sun Apr 15 17:11:34 CEST 2018 -->
+<?xml version="1.0" encoding="UTF-8"?><!-- EMMA v2.1.5320 (stable) report, generated Sun Apr 15 19:16:13 CEST 2018 -->
 
 <report>
   <stats>
@@ -6,32 +6,32 @@
     <classes value="6"/>
     <methods value="39"/>
     <srcfiles value="6"/>
-    <srclines value="319"/>
+    <srclines value="326"/>
   </stats>
   <data>
     <all name="all classes">
       <coverage type="class, %" value="100% (6/6)"/>
       <coverage type="method, %" value="97%  (38/39)"/>
-      <coverage type="block, %" value="96%  (1878/1956)"/>
-      <coverage type="line, %" value="94%  (299.7/319)"/>
+      <coverage type="block, %" value="96%  (1930/2008)"/>
+      <coverage type="line, %" value="94%  (306.7/326)"/>
 
       <package name="cps2002.game">
         <coverage type="class, %" value="100% (4/4)"/>
         <coverage type="method, %" value="97%  (32/33)"/>
-        <coverage type="block, %" value="96%  (1862/1940)"/>
-        <coverage type="line, %" value="94%  (293.7/313)"/>
+        <coverage type="block, %" value="96%  (1914/1992)"/>
+        <coverage type="line, %" value="94%  (300.7/320)"/>
 
         <srcfile name="Game.java">
           <coverage type="class, %" value="100% (1/1)"/>
           <coverage type="method, %" value="94%  (15/16)"/>
-          <coverage type="block, %" value="94%  (876/932)"/>
-          <coverage type="line, %" value="91%  (169.2/185)"/>
+          <coverage type="block, %" value="94%  (928/984)"/>
+          <coverage type="line, %" value="92%  (176.2/192)"/>
 
           <class name="Game">
             <coverage type="class, %" value="100% (1/1)"/>
             <coverage type="method, %" value="94%  (15/16)"/>
-            <coverage type="block, %" value="94%  (876/932)"/>
-            <coverage type="line, %" value="91%  (169.2/185)"/>
+            <coverage type="block, %" value="94%  (928/984)"/>
+            <coverage type="line, %" value="92%  (176.2/192)"/>
 
             <method name="main (String []): void">
               <coverage type="method, %" value="0%   (0/1)"/>
@@ -75,8 +75,8 @@
             </method>
             <method name="executeMove (String, Player, int): void">
               <coverage type="method, %" value="100% (1/1)"/>
-              <coverage type="block, %" value="100% (100/100)"/>
-              <coverage type="line, %" value="100% (27/27)"/>
+              <coverage type="block, %" value="100% (152/152)"/>
+              <coverage type="line, %" value="100% (34/34)"/>
             </method>
             <method name="htmlString (int): String">
               <coverage type="method, %" value="100% (1/1)"/>

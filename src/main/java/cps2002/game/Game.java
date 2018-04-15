@@ -15,8 +15,6 @@ the HTML files, and sets up the initial settings.
 
 public class Game {
 
-    // used to read user input
-   // Scanner sc = new Scanner(System.in);
 
     // set the constraints for choosing the number of players
     public static final int MAX_PLAYERS = 8;
@@ -66,7 +64,7 @@ public class Game {
         File dir = new File("HTMLFiles");
 
         for(File file: dir.listFiles())
-            if (!file.isDirectory() && !(file.getName().equals("Chess_pdt60.png")))
+            if (!file.isDirectory() && !(file.getName().equals("player.png")))
                 file.delete();
 
         // choose the number of players
@@ -230,7 +228,7 @@ public class Game {
                 choice = choice.toUpperCase();
                 // while invalid move
                 while(!((choice.equals("U")) || (choice.equals("D"))||(choice.equals("L"))||(choice.equals("R")))) {
-                    System.out.println("Move must be one of U,D,L,R");
+                    System.out.println("Move must be one of u,d,l,r");
                     System.out.println("Player " + num + " Enter Move");
                     choice = scanner.nextLine();
                     choice = choice.toUpperCase();
@@ -366,7 +364,8 @@ public class Game {
                 y++;
 
                 // output an error message if out of bounds
-                System.out.println("Invalid Move. Out of bounds");
+                int num = index+1;
+                System.out.println("Player "+num+" Invalid Move. Out of bounds");
             }
 
         /* if the move command is D, move the player down
@@ -382,7 +381,8 @@ public class Game {
                 y--;
 
                 // output an error message if out of bounds
-                System.out.println("Invalid Move. Out of bounds");
+                int num = index+1;
+                System.out.println("Player "+num+" Invalid Move. Out of bounds");
 
             }
 
@@ -401,8 +401,8 @@ public class Game {
 
 
                 // output an error message if out of bounds
-                System.out.println("Invalid Move. Out of bounds");
-
+                int num = index+1;
+                System.out.println("Player "+num+" Invalid Move. Out of bounds");
             }
 
         /* if the move command is R, move the player right
@@ -420,8 +420,8 @@ public class Game {
 
 
                 // output an error message if out of bounds
-                System.out.println("Invalid Move. Out of bounds");
-
+                int num = index+1;
+                System.out.println("Player "+num+" Invalid Move. Out of bounds");
             }
 
         }
@@ -566,7 +566,7 @@ public class Game {
 
                     html = html + "<div class=\""+tileType+"\" " +
                             "style = \"background-position:center;" +
-                            "background-image:url('./Chess_pdt60.png')\">" +
+                            "background-image:url('./player.png')\">" +
                             "</div>\n";
 
                 } else {
