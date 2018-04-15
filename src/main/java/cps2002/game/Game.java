@@ -58,6 +58,10 @@ public class Game {
     // set up initial settings
     public void startGame(){
 
+        System.out.println("The goal of the game is to find the treasure before your opponents do.");
+        System.out.println("You will need to enter a move: u for up, d for down, l for left and r for right.");
+        System.out.println("Your map can be found in the directory: HTMLFiles\n");
+
         // delete the html files in HTMLFiles folder
         File dir = new File("HTMLFiles");
 
@@ -184,7 +188,6 @@ public class Game {
      * run the moves in the current turn
      * repeat until treasure is found */
     public void gameLoop(Scanner scanner){
-        printMap();
 
         // repeat the main functionality until the treasure is found and the number of moves in a turn is 0
         while(treasureFound == false && currentSetOfMoves.size() == 0){
@@ -209,8 +212,18 @@ public class Game {
             for(int i = 0; i < players.size(); i++) {
 
                 // ask the user to enter their move
-                System.out.println("Enter Move");
-                String choice = scanner.nextLine();
+                int num = i+1;
+                String choice = "";
+                System.out.println("Player " + num + " Enter Move");
+                choice = scanner.nextLine();
+                choice = choice.toUpperCase();
+                // while invalid move
+                while(!((choice.equals("U")) || (choice.equals("D"))||(choice.equals("L"))||(choice.equals("R")))) {
+                    System.out.println("Move must be one of U,D,L,R");
+                    System.out.println("Player " + num + " Enter Move");
+                    choice = scanner.nextLine();
+                    choice = choice.toUpperCase();
+                }
 
                 // convert to upper case
                 choice = choice.toUpperCase();
@@ -278,20 +291,6 @@ public class Game {
     }
 
 
-    public void printMap(){
-
-
-
-        for(int i = 0; i < tm.size; i ++){
-            for(int j = 0; j < tm.size; j++){
-
-                System.out.print(tm.map[i][j]);
-            }
-            System.out.println("\n");
-        }
-
-        System.out.println("*********************");
-    }
 
     /* generate a random Position
     * Returns: Position-> player's starting position*/
@@ -307,7 +306,7 @@ public class Game {
 
         // check that the generated Position is not a water tile position, if it is
         // repeat the process
-        while(tm.getTileType(x,y) == 'w') {
+        while(tm.getTileType(x,y) == 'w' || tm.getTileType(x,y) == 't') {
             x = rand.nextInt(tm.size+1);
             y = rand.nextInt(tm.size+1);
         }
@@ -653,10 +652,6 @@ public class Game {
             return false;
         }
     }
-
-
-
-
 
     // main method
     public static void main(String args[]){

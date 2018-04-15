@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="cps2002.game.MapTest" time="0.01" tests="29" errors="0" skipped="0" failures="0">
+<testsuite name="cps2002.game.MapTest" time="0.005" tests="29" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/amd64"/>
@@ -60,28 +60,28 @@
     <property name="sun.cpu.isalist" value=""/>
   </properties>
   <testcase name="testSetSizeFail" classname="cps2002.game.MapTest" time="0"/>
-  <testcase name="testGetTileTypeWater" classname="cps2002.game.MapTest" time="0.002"/>
-  <testcase name="testIfValidWaterTileFirstColumn" classname="cps2002.game.MapTest" time="0.001"/>
+  <testcase name="testGetTileTypeWater" classname="cps2002.game.MapTest" time="0"/>
+  <testcase name="testIfValidWaterTileFirstColumn" classname="cps2002.game.MapTest" time="0"/>
   <testcase name="testGeneratePlayerMap" classname="cps2002.game.MapTest" time="0"/>
   <testcase name="testRevealColour" classname="cps2002.game.MapTest" time="0"/>
   <testcase name="testGetx" classname="cps2002.game.MapTest" time="0"/>
   <testcase name="testGety" classname="cps2002.game.MapTest" time="0"/>
   <testcase name="testSetMapSizeWithFalseConditionWhenPlayerIsLessThan5" classname="cps2002.game.MapTest" time="0"/>
-  <testcase name="testSetMapSizeWithFalseConditionWhenPlayerIsLessThan9" classname="cps2002.game.MapTest" time="0"/>
+  <testcase name="testSetMapSizeWithFalseConditionWhenPlayerIsLessThan9" classname="cps2002.game.MapTest" time="0.001"/>
   <testcase name="testIfValidWaterTileLastColumn" classname="cps2002.game.MapTest" time="0"/>
   <testcase name="testCheckIfValidWaterTileBottomRow" classname="cps2002.game.MapTest" time="0"/>
-  <testcase name="testCheckIfValidWaterTileTopRow" classname="cps2002.game.MapTest" time="0"/>
+  <testcase name="testCheckIfValidWaterTileTopRow" classname="cps2002.game.MapTest" time="0.004"/>
   <testcase name="testInvalidTileInMiddle" classname="cps2002.game.MapTest" time="0"/>
   <testcase name="testIfInvalidWaterTileFirstColumn" classname="cps2002.game.MapTest" time="0"/>
   <testcase name="testNumOfWaterTiles" classname="cps2002.game.MapTest" time="0"/>
   <testcase name="testSetMapSizeWithTrueConditionWhenPlayerIsLessThan5" classname="cps2002.game.MapTest" time="0"/>
-  <testcase name="testSetMapSizeWithTrueConditionWhenPlayerIsLessThan9" classname="cps2002.game.MapTest" time="0.001"/>
+  <testcase name="testSetMapSizeWithTrueConditionWhenPlayerIsLessThan9" classname="cps2002.game.MapTest" time="0"/>
   <testcase name="testIfInvalidWaterTileLastColumn" classname="cps2002.game.MapTest" time="0"/>
   <testcase name="testTreasureTile" classname="cps2002.game.MapTest" time="0"/>
   <testcase name="testNumberOfPlayers" classname="cps2002.game.MapTest" time="0"/>
   <testcase name="testCheckValidWaterTileBottomRow" classname="cps2002.game.MapTest" time="0"/>
-  <testcase name="testWaterTiles" classname="cps2002.game.MapTest" time="0.001"/>
-  <testcase name="testGetTileTypeGrey" classname="cps2002.game.MapTest" time="0.005"/>
+  <testcase name="testWaterTiles" classname="cps2002.game.MapTest" time="0"/>
+  <testcase name="testGetTileTypeGrey" classname="cps2002.game.MapTest" time="0"/>
   <testcase name="testGetTileTypeTreasure" classname="cps2002.game.MapTest" time="0"/>
   <testcase name="testSetSize" classname="cps2002.game.MapTest" time="0"/>
   <testcase name="testSetMap" classname="cps2002.game.MapTest" time="0"/>
